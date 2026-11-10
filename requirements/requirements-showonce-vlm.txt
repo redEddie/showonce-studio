@@ -1,0 +1,7 @@
+# Historical Thor additions, not a standalone portable environment lock. See docs/WORKERS.md.
+# Additions to the inherited piper-show environment; see setup-showonce-vlm.sh.
+transformers==5.21.1
+accelerate==1.15.0
+tokenizers==0.23.3
+huggingface-hub==2.2.0
+lm-format-enforcer==0.11.3

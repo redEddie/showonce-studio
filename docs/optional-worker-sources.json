@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "name": "MoGe",
+      "source": "https://github.com/microsoft/MoGe.git",
+      "revision": "a8c37341bc0325ca99b9d57981cc3bb2bd3e255b",
+      "source_bundled": false,
+      "weights_bundled": false
+    },
+    {
+      "name": "spconv",
+      "source": "https://github.com/traveller59/spconv.git",
+      "revision": "263d6b47425ef843c82f997b12d8b714013d216c",
+      "source_bundled": false,
+      "weights_bundled": false
+    },
+    {
+      "name": "nvdiffrast",
+      "source": "https://github.com/NVlabs/nvdiffrast.git",
+      "revision": "253ac4fcea7de5f396371124af597e6cc957bfae",
+      "source_bundled": false,
+      "weights_bundled": false
+    },
+    {
+      "name": "utils3d",
+      "source": "https://github.com/EasternJournalist/utils3d.git",
+      "revision": "3913c65d81e05e47b9f367250cf8c0f7462a0900",
+      "source_bundled": false,
+      "weights_bundled": false
+    },
+    {
+      "name": "cumm",
+      "source": "https://github.com/FindDefinition/cumm.git",
+      "revision": "d971d02a0b29b7e6da46186564f37bde77b99dcc",
+      "source_bundled": false,
+      "weights_bundled": false
+    },
+    {
+      "name": "real2sim",
+      "source": "https://github.com/gibeom25/real2sim.git",
+      "revision": "a326c9254be4ddce466d23b479d89c24c6bbe236",
+      "source_bundled": false,
+      "weights_bundled": false
+    },
+    {
+      "name": "gsplat",
+      "source": "https://github.com/nerfstudio-project/gsplat.git",
+      "revision": "2323de5905d5e90e035f792fe65bad0fedd413e7",
+      "source_bundled": false,
+      "weights_bundled": false
+    },
+    {
+      "name": "sam-3d-objects",
+      "source": "https://github.com/facebookresearch/sam-3d-objects.git",
+      "revision": "f91db411c50efee93d8db7aeb323885650f6f722",
+      "source_bundled": false,
+      "weights_bundled": false
+    },
+    {
+      "name": "kaolin",
+      "source": "https://github.com/NVIDIAGameWorks/kaolin.git",
+      "revision": "ee8b7eca1e56b1b9fd1509fc406f8d8ccbc9240b",
+      "source_bundled": false,
+      "weights_bundled": false
+    },
+    {
+      "name": "pytorch3d",
+      "source": "https://github.com/facebookresearch/pytorch3d.git",
+      "revision": "75ebeeaea0908c5527e7b1e305fbc7681382db47",
+      "source_bundled": false,
+      "weights_bundled": false
+    }
+  ],
+  "foundationpose": "See source-inventory/foundationpose-source.json and the original upstream license/patch metadata.",
+  "status": "Native GPU installation is machine-specific and is not exercised by the CPU example."
+}

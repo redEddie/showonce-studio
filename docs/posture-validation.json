@@ -1,0 +1,83 @@
+{
+  "hardware_commands_sent": false,
+  "actual_robot_motion_tested": false,
+  "posture_command_parity": [
+    {
+      "case": "open",
+      "writes": 98,
+      "max_reference_difference_rad": 0.0,
+      "recovered": false
+    },
+    {
+      "case": "closed",
+      "writes": 129,
+      "max_reference_difference_rad": 0.0,
+      "recovered": false
+    },
+    {
+      "case": "recovery",
+      "writes": 176,
+      "max_reference_difference_rad": 0.0,
+      "recovered": true
+    }
+  ],
+  "scripted_unchanged_numerical_functions": [
+    "dump",
+    "freeze_scene",
+    "make_targets",
+    "read_robot",
+    "wait_initial_feedback",
+    "solve_joint_goal",
+    "choose_grasp_orientation",
+    "execute_stage"
+  ],
+  "tutorial_full_mock_plan": {
+    "success": true,
+    "stages": [
+      "approach",
+      "descend",
+      "close",
+      "lift",
+      "transport",
+      "release",
+      "retreat"
+    ],
+    "hardware_commands_sent": false,
+    "policy_weights_loaded": false,
+    "is_physics_simulation": false
+  },
+  "runtime_core_changed": false,
+  "standalone_cli_validation": {
+    "success": true,
+    "fixture": "synthetic timestamped files in an isolated directory; mock plan only",
+    "stages": 7,
+    "web_app_required": false,
+    "socket_and_sdk_access_denied": true,
+    "legacy_source_access_denied": true,
+    "policy_weight_access_denied": true,
+    "installed_wheel_verified": true
+  },
+  "managed_home_validation": {
+    "success": true,
+    "transport": "injected mock plant",
+    "legacy_source_access_denied": true,
+    "policy_weight_access_denied": true,
+    "socket_and_sdk_access_denied": true,
+    "mock_goal_writes": 98,
+    "final_joint_error_rad": 0.0007095836284410332,
+    "controller_geometry_p99_ms": 1.2374987243674689
+  },
+  "runtime_core_sha256": "e197cf618137f8327312ae06b303f288e5c7e0617c4a121d6cdf7022edcdf743",
+  "ruckig_version": "0.19.4",
+  "test_suite": {
+    "passed": 194,
+    "skipped": 1,
+    "subtests_passed": 20
+  },
+  "packaging": {
+    "posture_configuration_in_wheel": true,
+    "standalone_scripted_console_entrypoint": true,
+    "app_pip_check": "passed",
+    "runtime_core_lock": "passed"
+  }
+}

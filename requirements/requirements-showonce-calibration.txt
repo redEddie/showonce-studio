@@ -1,0 +1,10 @@
+# Thor Python 3.12 native worker inventory; not a portable CUDA lock/build recipe.
+# Install Studio/Runtime here too. SAM stays in the original NumPy 1.x SAM worker.
+# torch==2.10.0+cu130 (platform-specific upstream wheel)
+# pytorch3d==0.7.8 (native CUDA build, revision in docs/external-dependencies.json)
+# nvdiffrast==0.4.0 (native CUDA build, revision in docs/external-dependencies.json)
+numpy==2.5.4
+scipy==1.18.1
+trimesh==5.1.1
+mujoco==3.3.7
+# OpenCV is required; use a build compatible with this NumPy/architecture.

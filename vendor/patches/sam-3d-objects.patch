@@ -1,0 +1,29 @@
+diff --git a/sam3d_objects/model/backbone/tdfy_dit/representations/mesh/flexicubes/flexicubes.py b/sam3d_objects/model/backbone/tdfy_dit/representations/mesh/flexicubes/flexicubes.py
+index 583b5e3..3e0ccd6 100644
+--- a/sam3d_objects/model/backbone/tdfy_dit/representations/mesh/flexicubes/flexicubes.py
++++ b/sam3d_objects/model/backbone/tdfy_dit/representations/mesh/flexicubes/flexicubes.py
+@@ -15,7 +15,7 @@
+ # limitations under the License.
+ import torch
+ from .tables import *
+-from kaolin.utils.testing import check_tensor
++from tensor_check import check_tensor
+ 
+ __all__ = [
+     'FlexiCubes'
+diff --git a/sam3d_objects/model/backbone/tdfy_dit/utils/postprocessing_utils.py b/sam3d_objects/model/backbone/tdfy_dit/utils/postprocessing_utils.py
+index de7a4da..debe948 100644
+--- a/sam3d_objects/model/backbone/tdfy_dit/utils/postprocessing_utils.py
++++ b/sam3d_objects/model/backbone/tdfy_dit/utils/postprocessing_utils.py
+@@ -7,7 +7,10 @@ from PIL import Image
+ from tqdm import tqdm
+ import trimesh
+ import trimesh.visual
+-import xatlas
++try:
++    import xatlas
++except ImportError:
++    xatlas = None  # UV baking disabled; vertex colors retained.
+ import pyvista as pv
+ from pymeshfix import _meshfix
+ import igraph

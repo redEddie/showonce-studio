@@ -1,0 +1,36 @@
+--- a/showonce_models.py
++++ b/showonce_models.py
+@@ -73,9 +73,9 @@
+         metadata = {}
+     setup_commands = []
+     if not runtime_ready:
+-        setup_commands.append('bash setup-showonce-kanana.sh' if spec['adapter'] == 'kanana' else 'bash setup-showonce-vlm.sh')
++        setup_commands.append('# docs/WORKERS.md: VLM 환경을 설치하고 python.kanana 또는 python.vlm 경로를 설정하세요.')
+     if not installed:
+-        setup_commands.append(f"python showonce_models.py download {model_id}")
++        setup_commands.append(f"python -P -m showonce_studio.showonce_models download {model_id}")
+     return dict(spec, installed=installed, runtime_ready=runtime_ready,
+                 available=installed and runtime_ready,
+                 inference_tested=bool(metadata.get('inference_tested')),
+--- a/showonce_stages.py
++++ b/showonce_stages.py
+@@ -151,7 +151,7 @@
+                 raise ValueError('모델 설치가 필요합니다. '+current['model']['setup_command'])
+             python = ROOT/model_spec(model_id)['environment']/'bin/python'
+             if not python.is_file():
+-                raise ValueError('VLM 실행 환경이 없습니다. setup-showonce-vlm.sh를 실행하세요.')
++                raise ValueError('VLM 실행 환경이 없습니다. docs/WORKERS.md에 따라 설치하고 python.vlm 또는 python.kanana 경로를 설정하세요.')
+             with (ROOT/'runs/.showonce-vlm.lock').open('a') as gpu_lock:
+                 try:
+                     fcntl.flock(gpu_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+--- a/showonce_geometry_api.py
++++ b/showonce_geometry_api.py
+@@ -39,7 +39,7 @@
+             try:health=self.request('/health')
+             except (urllib.error.URLError,TimeoutError):
+                 python=ROOT/'.venv-geometry/bin/python'
+-                if not python.is_file():raise ValueError('bash setup-showonce-geometry.sh로 분석 환경을 준비하세요.')
++                if not python.is_file():raise ValueError('docs/SAM-WORKER.md에 따라 SAM 분석 환경을 설치하고 python.geometry 경로를 설정하세요.')
+                 with (ROOT/'runs/showonce-geometry-node.log').open('a') as log:
+                     subprocess.Popen([str(python),'-u',str(ROOT/'showonce_geometry_node.py'),
+                                       '--out',str(self.root),'--port',str(self.port)],

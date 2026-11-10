@@ -1,0 +1,5 @@
+Kanana is licensed in accordance with the Kanana License Agreement. Copyright © KAKAO Corp. All Rights Reserved.
+Model: kakaocorp/kanana-1.5-v-3b-instruct
+Revision: 2e00ef13ccec2e99459a8eada18a1bfd05bff44b
+Unmodified upstream model code; runtime uses Transformers 4.51.3 in a separate environment.
+Powered by Kanana

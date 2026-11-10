@@ -1,0 +1,9 @@
+# Preserve upstream license text and extracted helper bytes verbatim.
+vendor/licenses/*.txt -whitespace
+src/showonce_studio/_vendor/kaolin-check-tensor/tensor_check.py -whitespace
+# Unified diff context preserves upstream blank-line prefixes.
+vendor/patches/*.patch -whitespace
+
+# Preserve the calibration model's upstream bytes (including manufacturer CRLF).
+src/showonce_studio/calibration/data/robot/** -text linguist-vendored
+src/showonce_studio/calibration/data/robot/manufacturer/piper.urdf whitespace=-blank-at-eol,cr-at-eol

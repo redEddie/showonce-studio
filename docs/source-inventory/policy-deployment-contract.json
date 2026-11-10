@@ -1,0 +1,210 @@
+{
+  "schema": "showonce_policy_deployment_contract_v1",
+  "package_files": {
+    "policy.json": "schema_version=1, actor=mlp|lstm, observation_size, action_size, exact observation_layout, environment, kinematics, source checkpoint/step, weights_sha256",
+    "weights.npz": "FP32 exported actor and frozen normalizer; allow_pickle=False",
+    "golden.npz": "observations[T,B,D], resets[T,B], actions[T,B,7] from original training actor; include resets and all controller phases; finite values only"
+  },
+  "accepted_layouts": {
+    "49": [
+      {
+        "name": "joint_position_rad",
+        "start": 0,
+        "stop": 6
+      },
+      {
+        "name": "joint_velocity_rad_s",
+        "start": 6,
+        "stop": 12
+      },
+      {
+        "name": "servo_target_minus_joint_rad",
+        "start": 12,
+        "stop": 18
+      },
+      {
+        "name": "tcp_position_base_m",
+        "start": 18,
+        "stop": 21
+      },
+      {
+        "name": "tcp_rotation_vector_base_rad",
+        "start": 21,
+        "stop": 24
+      },
+      {
+        "name": "gripper_full_width_m",
+        "start": 24,
+        "stop": 25
+      },
+      {
+        "name": "block_position_base_m",
+        "start": 25,
+        "stop": 28
+      },
+      {
+        "name": "block_rotation_vector_base_rad",
+        "start": 28,
+        "stop": 31
+      },
+      {
+        "name": "bowl_position_base_m",
+        "start": 31,
+        "stop": 34
+      },
+      {
+        "name": "block_minus_tcp_m",
+        "start": 34,
+        "stop": 37
+      },
+      {
+        "name": "block_minus_bowl_m",
+        "start": 37,
+        "stop": 40
+      },
+      {
+        "name": "perceived_block_half_size_m",
+        "start": 40,
+        "stop": 41
+      },
+      {
+        "name": "gripper_final_goal_normalized",
+        "start": 41,
+        "stop": 42
+      },
+      {
+        "name": "previous_normalized_policy_action",
+        "start": 42,
+        "stop": 49
+      }
+    ],
+    "50": [
+      {
+        "name": "joint_position_rad",
+        "start": 0,
+        "stop": 6
+      },
+      {
+        "name": "joint_velocity_rad_s",
+        "start": 6,
+        "stop": 12
+      },
+      {
+        "name": "servo_target_minus_joint_rad",
+        "start": 12,
+        "stop": 18
+      },
+      {
+        "name": "tcp_position_base_m",
+        "start": 18,
+        "stop": 21
+      },
+      {
+        "name": "tcp_rotation_vector_base_rad",
+        "start": 21,
+        "stop": 24
+      },
+      {
+        "name": "gripper_full_width_m",
+        "start": 24,
+        "stop": 25
+      },
+      {
+        "name": "block_position_base_m",
+        "start": 25,
+        "stop": 28
+      },
+      {
+        "name": "block_rotation_vector_base_rad",
+        "start": 28,
+        "stop": 31
+      },
+      {
+        "name": "bowl_position_base_m",
+        "start": 31,
+        "stop": 34
+      },
+      {
+        "name": "block_minus_tcp_m",
+        "start": 34,
+        "stop": 37
+      },
+      {
+        "name": "block_minus_bowl_m",
+        "start": 37,
+        "stop": 40
+      },
+      {
+        "name": "perceived_block_half_size_m",
+        "start": 40,
+        "stop": 41
+      },
+      {
+        "name": "gripper_final_goal_normalized",
+        "start": 41,
+        "stop": 42
+      },
+      {
+        "name": "controller_phase_normalized",
+        "start": 42,
+        "stop": 43
+      },
+      {
+        "name": "previous_normalized_policy_action",
+        "start": 43,
+        "stop": 50
+      }
+    ]
+  },
+  "phase_observation": {
+    "field": "controller_phase_normalized",
+    "index": 42,
+    "MOVE": 0.0,
+    "BRAKE": 0.5,
+    "GRIP": 1.0,
+    "warning": "Only 50D policies trained with this exact phase convention. Do not append a dummy phase to a 49D network."
+  },
+  "action_contract": "normalized [-1,1]: base-frame linear/angular twist commands (6) and gripper action (1); NOT direct joint/CAN commands",
+  "action_scales": "Preserve exported max_lin_vel, max_ang_vel, gripper mode/threshold/rate; do not reinterpret as joint targets.",
+  "coordinate_contract": {
+    "frame": "piper_base_link",
+    "units": "SI",
+    "block_origin": "geometric centre",
+    "bowl_origin": "outer bottom centre",
+    "rotations": "same quaternion to rotation-vector convention as training; cube symmetry is not silently rewritten"
+  },
+  "required_kinematics": {
+    "robot_model": "piper_v100",
+    "observation_frame": "base_link",
+    "tcp_local_position_m": [
+      0.0,
+      0.0,
+      0.1385
+    ],
+    "piper_xml_sha256": "828ed79064944d277c595fb08db19c9efa185ec2ca5e3f85347c6f8d214db3ea"
+  },
+  "runtime_profile": {
+    "controller": "show103_serialized",
+    "max_joint_vel": 1.0,
+    "control_acceleration": 5.0,
+    "control_jerk": 100.0,
+    "tcp_local_position_m": [
+      0.0,
+      0.0,
+      0.1385
+    ],
+    "tcp_floor_clearance_m": 0.01,
+    "gripper_force": 0.5,
+    "control_dt_s": 0.005,
+    "policy_dt_s": 0.1
+  },
+  "golden_abs_tolerance": 0.0001,
+  "limitations": [
+    "Raw Orbax checkpoints require a matching exporter in the external training project. Studio does not guess an export configuration.",
+    "49D SHOW-100 baseline validated with the actual export. 50D phase adapter has contract/unit tests but no new SHOW-103 export has been validated.",
+    "Mock uses a fake plant, not physics or pick-and-place success evaluation. Recorded input inspection uses synthetic arm state.",
+    "Live execution must use matching live camera/calibration and robot feedback, never prerecorded video. Camera/SAM ownership is not switched automatically.",
+    "Force 0.5 is the SDK gripper effort parameter, not arm stiffness or a measured contact force.",
+    "Physical model properties, scale/geometry accuracy, learning environment/rewards and final sim2real validation remain external."
+  ]
+}

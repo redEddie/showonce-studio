@@ -1,0 +1,75 @@
+{
+  "studio": {
+    "python_files_scanned": 62,
+    "legacy_work_directory_references": [],
+    "source_symlinks": []
+  },
+  "runtime": {
+    "python_files_scanned": 29,
+    "legacy_work_directory_references": [],
+    "source_symlinks": []
+  },
+  "status": "passed_for_packaged_code_and_cpu_offline_scope",
+  "offline_clean_workspace": {
+    "status": "passed",
+    "synthetic_example": {
+      "recording_id": "20990101-000000-000001",
+      "policy_id": "af8790661a3618bbd68b",
+      "synthetic": true,
+      "hardware_commands_sent": false
+    },
+    "pages_checked": [
+      "/",
+      "/stages",
+      "/objects",
+      "/policies"
+    ],
+    "installed_module_paths": [
+      "/home/pi_lab/projects/.public-prep-20261105/venv/lib/python3.12/site-packages/showonce_studio/__init__.py",
+      "/home/pi_lab/projects/.public-prep-20261105/venv/lib/python3.12/site-packages/piper_runtime/__init__.py"
+    ],
+    "offline_web_stopped": true,
+    "camera_model_robot_workers_started": false,
+    "hardware_commands_sent": false,
+    "legacy_access_denied": true,
+    "denied_directories": [
+      "/home/pi_lab/piper_ws",
+      "/home/pi_lab/songjisu",
+      "/home/pi_lab/Documents/Codex",
+      "/home/pi_lab/pac2026",
+      "/home/pi_lab/projects/showonce-studio",
+      "/home/pi_lab/projects/piper-runtime"
+    ]
+  },
+  "external_code_still_required": {
+    "reference_pose_tracking": [
+      "FoundationPose"
+    ],
+    "new_mesh_reconstruction": [
+      "SAM 3D Objects",
+      "real2sim"
+    ],
+    "packages": [
+      "SAM",
+      "VLM dependencies",
+      "SDK",
+      "Ruckig",
+      "native geometry libraries"
+    ]
+  },
+  "current_thor_bindings": {
+    "configuration_uses_existing_workspace_and_worker_environments": true,
+    "sam_weights_in_existing_team_models_directory": true,
+    "foundationpose_weights_link_to_existing_team_directory": true,
+    "foundationpose_venv_pth_shares_existing_geometry_venv": true,
+    "local_environments_migrated_in_this_audit": false
+  },
+  "hardware_commands_sent": false,
+  "fresh_gpu_full_pipeline_installation_verified": false,
+  "test_suite": {
+    "passed": 194,
+    "skipped": 1,
+    "subtests_passed": 20
+  },
+  "model_root_and_setup_command_check": "passed"
+}

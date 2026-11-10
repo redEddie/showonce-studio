@@ -1,0 +1,236 @@
+{
+  "schema": "showonce_external_dependencies_v1",
+  "reviewed_on": "2026-11-05",
+  "scope": "Source revisions and integration paths; not a portable CUDA environment lock. No external weights are bundled. Historical environment inventory is separate.",
+  "components": [
+    {
+      "name": "MoGe",
+      "url": "https://github.com/microsoft/MoGe.git",
+      "revision": "a8c37341bc0325ca99b9d57981cc3bb2bd3e255b",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "optional_upstream_build"
+    },
+    {
+      "name": "spconv",
+      "url": "https://github.com/traveller59/spconv.git",
+      "revision": "263d6b47425ef843c82f997b12d8b714013d216c",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "optional_upstream_build"
+    },
+    {
+      "name": "nvdiffrast",
+      "url": "https://github.com/NVlabs/nvdiffrast.git",
+      "revision": "253ac4fcea7de5f396371124af597e6cc957bfae",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "optional_upstream_build",
+      "required_for": [
+        "camera_calibration"
+      ]
+    },
+    {
+      "name": "utils3d",
+      "url": "https://github.com/EasternJournalist/utils3d.git",
+      "revision": "3913c65d81e05e47b9f367250cf8c0f7462a0900",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "optional_upstream_build"
+    },
+    {
+      "name": "cumm",
+      "url": "https://github.com/FindDefinition/cumm.git",
+      "revision": "d971d02a0b29b7e6da46186564f37bde77b99dcc",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "optional_upstream_build"
+    },
+    {
+      "name": "real2sim",
+      "url": "https://github.com/gibeom25/real2sim.git",
+      "revision": "a326c9254be4ddce466d23b479d89c24c6bbe236",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "permission_pending",
+      "license": "not found at reviewed revision; author clarification required"
+    },
+    {
+      "name": "gsplat",
+      "url": "https://github.com/nerfstudio-project/gsplat.git",
+      "revision": "2323de5905d5e90e035f792fe65bad0fedd413e7",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "optional_upstream_build"
+    },
+    {
+      "name": "sam-3d-objects",
+      "url": "https://github.com/facebookresearch/sam-3d-objects.git",
+      "revision": "f91db411c50efee93d8db7aeb323885650f6f722",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "optional_upstream_build"
+    },
+    {
+      "name": "kaolin",
+      "url": "https://github.com/NVIDIAGameWorks/kaolin.git",
+      "revision": "ee8b7eca1e56b1b9fd1509fc406f8d8ccbc9240b",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "optional_upstream_build"
+    },
+    {
+      "name": "pytorch3d",
+      "url": "https://github.com/facebookresearch/pytorch3d.git",
+      "revision": "75ebeeaea0908c5527e7b1e305fbc7681382db47",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "profile": "reconstruction",
+      "status": "optional_upstream_build",
+      "required_for": [
+        "camera_calibration"
+      ]
+    },
+    {
+      "name": "SAM 3",
+      "profile": "perception",
+      "url": "https://github.com/facebookresearch/sam3",
+      "revision": "7f473cfd983d5eb43040ff608f66bff0d7bdcb53",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "license": "SAM License",
+      "path": "<third_party>/sam3 or installed sam3 package",
+      "required_for": [
+        "object_mask_tracking",
+        "hand_mask_tracking",
+        "live_perception",
+        "camera_calibration"
+      ],
+      "installed_version": "0.1.0",
+      "validation": "sam-worker-validation.json",
+      "status": "unmodified_upstream_fresh_worker_and_ipc_verified",
+      "numpy": "1.26.4",
+      "source_modified": false
+    },
+    {
+      "name": "FoundationPose-plus-plus",
+      "profile": "pose",
+      "url": "https://github.com/shingarey/FoundationPose-plus-plus",
+      "revision": "58aa7154de23ae86d542366858fc6bcca3b747b0",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "license": "upstream NVIDIA non-commercial research/evaluation",
+      "path": "<third_party>/FoundationPose -> checkout/FoundationPose",
+      "patch": "vendor/patches/FoundationPose-Utils.patch",
+      "required_for": [
+        "reference_mesh_6d_pose_tracking"
+      ]
+    },
+    {
+      "name": "Qwen3.5-9B",
+      "profile": "vlm",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "license": "Apache-2.0",
+      "path": "<models>/Qwen3.5-9B",
+      "required_for": [
+        "automatic_stage_segmentation"
+      ]
+    },
+    {
+      "name": "pyAgxArm",
+      "profile": "robot",
+      "url": "https://github.com/agilexrobotics/pyAgxArm",
+      "revision": "841a625f5f4920e776f20b934eb13048b747e6d0",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "license": "LGPL-3.0",
+      "install": "piper-runtime[robot]",
+      "required_for": [
+        "hardware_policy_execution"
+      ]
+    },
+    {
+      "name": "librealsense/pyrealsense2",
+      "profile": "capture",
+      "url": "https://github.com/IntelRealSense/librealsense",
+      "revision": null,
+      "observed_version": "2.59.1",
+      "source_bundled": false,
+      "weights_bundled": false,
+      "status": "native build provenance still needed for Thor",
+      "required_for": [
+        "rgbd_recording",
+        "camera_calibration"
+      ]
+    },
+    {
+      "name": "Studio posture-A controller and standalone scripted tutorial",
+      "profile": "posture/tutorial",
+      "url": null,
+      "revision": null,
+      "source_bundled": true,
+      "weights_bundled": false,
+      "status": "packaged native posture controller and optional terminal tutorial; no external runner",
+      "configuration": [],
+      "provenance": "../provenance/posture-and-scripted.json",
+      "validation": "posture-validation.json",
+      "policy_weights_required": false
+    },
+    {
+      "name": "Studio native live cube/bowl perception",
+      "profile": "live_vision",
+      "source_bundled": true,
+      "weights_bundled": false,
+      "configuration": [
+        "live_vision.python",
+        "live_vision.objects",
+        "paths.calibration",
+        "paths.sam_checkpoint"
+      ],
+      "external_show33_source_required": false,
+      "provenance": "../provenance/live-perception.json",
+      "validation": "live-perception-validation.json"
+    },
+    {
+      "name": "Studio markerless camera calibration",
+      "profile": "calibration",
+      "source_bundled": true,
+      "weights_bundled": false,
+      "external_show33_source_required": false,
+      "robot_assets_bundled": true,
+      "provenance": "../provenance/camera-calibration.json",
+      "validation": "calibration-validation.json",
+      "configuration": [
+        "python.capture",
+        "python.geometry",
+        "python.calibration",
+        "paths.sam_checkpoint",
+        "paths.calibration"
+      ]
+    },
+    {
+      "name": "Ruckig",
+      "url": "https://github.com/pantor/ruckig",
+      "profile": "posture",
+      "installed_version": "0.19.4",
+      "source_bundled": false,
+      "license": "MIT",
+      "install": "showonce-studio[motion]",
+      "required_for": [
+        "posture_a_time_optimal_reference"
+      ]
+    }
+  ]
+}

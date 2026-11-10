@@ -1,0 +1,648 @@
+{
+  "schema": "showonce_dependency_inventory_v1",
+  "reviewed_on": "2026-10-30",
+  "status": "planning_inventory_not_portable_lock",
+  "host": {
+    "platform": "Linux",
+    "architecture": "aarch64",
+    "python": "3.12.16",
+    "environment": "piper-show"
+  },
+  "observed_packages": {
+    "pyAgxArm": {
+      "version": "1.0.0",
+      "license_metadata": "LGPL-3.0-only"
+    },
+    "python-can": {
+      "version": "4.6.1",
+      "license_metadata": "LGPL-3.0-only"
+    },
+    "numpy": {
+      "version": "2.5.4",
+      "license_metadata": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+    },
+    "scipy": {
+      "version": "1.18.1",
+      "license_metadata": "Copyright (c) 2001-2002 Enthought, Inc. 2003, SciPy Developers."
+    },
+    "mujoco": {
+      "version": "3.3.7",
+      "license_metadata": "Apache-2.0"
+    },
+    "ruckig": {
+      "version": "0.19.4",
+      "license_metadata": "MIT License"
+    },
+    "sam3": {
+      "version": "0.1.0",
+      "license_metadata": "SAM License"
+    },
+    "torch": {
+      "version": "2.10.0+cu130",
+      "license_metadata": "BSD-3-Clause"
+    },
+    "torchvision": {
+      "version": "0.25.0+cu130",
+      "license_metadata": "BSD"
+    },
+    "opencv-contrib-python": {
+      "version": "5.0.0.93",
+      "license_metadata": "Apache 2.0"
+    },
+    "trimesh": {
+      "version": "5.1.1",
+      "license_metadata": "The MIT License (MIT)"
+    },
+    "PyYAML": {
+      "version": "6.0.3",
+      "license_metadata": "MIT"
+    },
+    "psutil": {
+      "version": "7.2.2",
+      "license_metadata": "BSD-3-Clause"
+    },
+    "piper-sdk": {
+      "version": "0.6.2",
+      "license_metadata": "MIT License"
+    },
+    "av": {
+      "version": "19.0.2",
+      "license_metadata": "BSD-3-Clause",
+      "role": "VFR H.264 capture playback encoding; inspect bundled FFmpeg third-party licenses before public binary distribution"
+    },
+    "open3d": {
+      "version": "0.20.0",
+      "license_metadata": "MIT",
+      "environment": ".venv-geometry"
+    },
+    "coacd": {
+      "version": "1.0.14",
+      "license_metadata": "MIT",
+      "environment": ".venv-sam3d"
+    },
+    "usd-core": {
+      "version": "26.11",
+      "license_metadata": "LicenseRef-TOST-1.0",
+      "environment": ".venv-sam3d"
+    },
+    "pytorch3d": {
+      "version": "0.7.8",
+      "license_metadata": "see upstream license",
+      "environment": ".venv-sam3d"
+    },
+    "spconv": {
+      "version": "2.3.8",
+      "license_metadata": "Apache License 2.0",
+      "environment": ".venv-sam3d"
+    },
+    "cumm": {
+      "version": "0.8.2",
+      "license_metadata": "MIT",
+      "environment": ".venv-sam3d"
+    },
+    "gsplat": {
+      "version": "1.5.3",
+      "license_metadata": "see upstream license",
+      "environment": ".venv-sam3d"
+    },
+    "nvdiffrast": {
+      "version": "0.4.0",
+      "license_metadata": "see upstream license",
+      "environment": ".venv-sam3d"
+    },
+    "hydra-core": {
+      "version": "1.3.2",
+      "license_metadata": "MIT",
+      "environment": ".venv-sam3d"
+    }
+  },
+  "component_package_groups": {
+    "robot_control": [
+      "pyAgxArm",
+      "python-can",
+      "numpy",
+      "scipy",
+      "mujoco",
+      "ruckig"
+    ],
+    "perception": [
+      "sam3",
+      "torch",
+      "torchvision",
+      "opencv-contrib-python",
+      "numpy",
+      "scipy",
+      "trimesh",
+      "PyYAML",
+      "psutil"
+    ],
+    "compatibility_sdk": [
+      "piper-sdk"
+    ],
+    "demonstration_capture": [
+      "pyrealsense2",
+      "numpy",
+      "opencv-contrib-python",
+      "av"
+    ],
+    "stage_inference": [
+      "torch",
+      "torchvision",
+      "transformers",
+      "accelerate",
+      "tokenizers",
+      "Pillow"
+    ],
+    "video_geometry": [
+      "sam3",
+      "torch",
+      "opencv-contrib-python",
+      "numpy",
+      "scipy",
+      "trimesh",
+      "open3d"
+    ]
+  },
+  "native_bindings": [
+    {
+      "name": "pyrealsense2",
+      "version": "2.59.1",
+      "installation": "copied system build; no Python distribution metadata",
+      "release_work": "document librealsense commit, native build recipe, wheel hash and redistribution notices"
+    },
+    {
+      "name": "ruckig",
+      "version": "0.19.4",
+      "installation": "local CPython 3.12 aarch64 wheel",
+      "release_work": "record wheel source/build provenance and SHA-256"
+    }
+  ],
+  "source_dependencies": [
+    {
+      "name": "pyAgxArm",
+      "url": "https://github.com/agilexrobotics/pyAgxArm",
+      "local_checkout_commit": "841a625f5f4920e776f20b934eb13048b747e6d0",
+      "license_metadata": "LGPL-3.0-only"
+    },
+    {
+      "name": "sam3",
+      "url": "https://github.com/facebookresearch/sam3",
+      "local_checkout_commit": "7f473cfd983d5eb43040ff608f66bff0d7bdcb53",
+      "license": "SAM License",
+      "weights": "download separately under upstream access terms; not bundled"
+    },
+    {
+      "name": "SHOW-33 calibration/perception integration",
+      "source": "team source currently outside piper_ws",
+      "environment": "FoundationPose subprocess currently uses separate Python 3.11 environment",
+      "release_work": "extract owned integration code, enumerate native dependencies, configure paths, establish source provenance and licenses"
+    }
+  ],
+  "frontend_existing": [
+    {
+      "name": "Apache ECharts",
+      "version": "6.1.0",
+      "license": "Apache-2.0",
+      "files": [
+        "vendor/echarts.min.js",
+        "vendor/echarts-LICENSE",
+        "vendor/echarts-NOTICE",
+        "vendor/echarts-LICENSE-d3"
+      ]
+    },
+    {
+      "name": "Three.js",
+      "version": "0.186.1",
+      "license": "MIT",
+      "files": [
+        "vendor/three/LICENSE",
+        "vendor/three/download.json",
+        "vendor/three/build/",
+        "vendor/three/examples/jsm/"
+      ],
+      "distribution": "vendored official npm package, local ES modules; no CDN"
+    }
+  ],
+  "planned_not_installed": [
+    {
+      "component": "real2sim worker",
+      "url": "https://github.com/gibeom25/real2sim",
+      "reviewed_commit": "a326c9254be4ddce466d23b479d89c24c6bbe236",
+      "upstream_environment": {
+        "python": "3.11",
+        "torch": "2.7.1+cu128",
+        "numpy": "<2"
+      },
+      "status": "implemented: pinned reconstruction output conversion and USD exporter used with recorded RGB-D keyframes; full single-frame capture pipeline not run",
+      "license_status": "no repository LICENSE found at review; clarify distribution terms with author",
+      "source": "scripts/setup_env.sh",
+      "integration_scope": "demonstration-video orchestrator around frame reconstruction; temporal object tracking, keyframe selection and asset alignment required",
+      "runtime_profile": "sam3d_runtime"
+    },
+    {
+      "component": "SAM 3D Objects",
+      "url": "https://github.com/facebookresearch/sam-3d-objects",
+      "license": "SAM License",
+      "status": "installed; approved official weights downloaded and actual four keyframe inferences completed for two objects",
+      "runtime_profile": "sam3d_runtime"
+    },
+    {
+      "component": "web UI proposal",
+      "packages": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "shadcn/ui",
+        "urdf-loader"
+      ],
+      "status": "Three.js viewer implemented separately; remaining framework packages are proposal only"
+    },
+    {
+      "component": "learning backend",
+      "backends": [
+        "existing MuJoCo training",
+        "optional future Isaac Sim / Isaac Lab"
+      ],
+      "status": "separate runtime profiles; USD export does not by itself adapt current MuJoCo task"
+    },
+    {
+      "component": "VLM stage segmentation",
+      "status": "implemented: local selectable Qwen, Kanana-V and Gemma adapters; see model selection validation receipts for actual execution status",
+      "outputs": [
+        "versioned time intervals",
+        "object roles",
+        "stage descriptions",
+        "transition/goal relation proposals"
+      ],
+      "inputs": "RGB video with timestamps from one fixed D435i; depth retained for geometry reconstruction",
+      "candidates": [
+        {
+          "model_id": "Qwen/Qwen3.5-9B",
+          "license": "Apache-2.0",
+          "role": "downloaded and actual CUDA inference verified; broad task accuracy untested",
+          "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+        },
+        {
+          "model_id": "kakaocorp/kanana-1.5-v-3b-instruct",
+          "revision": "2e00ef13ccec2e99459a8eada18a1bfd05bff44b",
+          "license": "Kanana License Agreement July 17 2025",
+          "commercial_terms": "own-service use subject to terms; model API/SI/on-prem/on-device offerings and >10m MAU require separate license; distributed output-trained models require Kanana prefix",
+          "license_files": [
+            "model-licenses/KANANA-LICENSE.txt",
+            "model-licenses/KANANA-NOTICE.txt"
+          ]
+        },
+        {
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+          "license": "Gemma Terms of Use",
+          "license_url": "https://ai.google.dev/gemma/terms",
+          "access": "official gated repository; access with user-authorized HF login; no tokens bundled"
+        }
+      ],
+      "local_inventory_check": {
+        "download_receipt_date": "2026-10-19",
+        "receipt_model": "Qwen/Qwen3-VL-8B-Instruct",
+        "historical_path": "/data/models/Qwen3-VL-8B-Instruct",
+        "current_path_exists": false,
+        "release_includes_weights": false,
+        "status": "historical download evidence only; current local weight availability unconfirmed"
+      }
+    }
+  ],
+  "dependency_check": {
+    "method": "python -m pip check",
+    "result": "failed",
+    "findings": [
+      "sam3 0.1.0 requires numpy<2,>=1.26; installed numpy is 2.5.4",
+      "nvidia-cusparselt-cu13 0.8.0 is not supported on this platform"
+    ],
+    "interpretation": "installed runtime has earlier inference/control validation; metadata/platform compatibility is unresolved for public installation"
+  },
+  "release_work_remaining": [
+    "Split dependency profiles for UI/API, control, perception, calibration, reconstruction and training. A single UI need not use one Python environment.",
+    "Pin source revisions, patches, wheels, hashes and host-specific GPU indexes.",
+    "Replace personal absolute paths with configuration and packaged assets.",
+    "Keep camera calibration, tokens, private capture data and gated weights outside source publication.",
+    "Collect third-party notices and verify robot mesh/model licenses separately.",
+    "Document robot model hash, TCP, observation/action contract and checkpoint normalization.",
+    "Validate a clean installation and a hardware-free demonstration before calling the environment reproducible."
+  ],
+  "references": [
+    "../requirements-piper-show.txt",
+    "../requirements-piper-show-other.txt",
+    "../requirements-piper-show-torch.txt",
+    "../PIPER_SHOW_ENV.md",
+    "../setup-piper-show.sh"
+  ],
+  "confirmed_product_scope": {
+    "name": "ShowOnce Studio",
+    "capture": "one fixed D435i RGB-D camera",
+    "demonstrator": "human hand",
+    "task_definition": "VLM automatic stage segmentation followed by human review/edit/confirmation",
+    "vlm_requirement": "open weights with commercial use permitted under model-specific license terms; local inference"
+  },
+  "capture_implementation": {
+    "ui": "showonce_studio.py + showonce_capture.html",
+    "node": "showonce_capture_node.py",
+    "format": "lossless RGB PNG + aligned raw uint16 depth PNG + frames.jsonl + calibration.json + VFR rgb.mp4",
+    "camera": "D435i 848x480 30fps",
+    "root": "datasets/demonstrations",
+    "robot_commands": false
+  },
+  "downloaded_models": [
+    {
+      "repo_id": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "status": "downloaded",
+      "files": 15,
+      "bytes": 19329392091,
+      "finished_s": 1793267197.6240573,
+      "inference_tested": true,
+      "safetensors_index_verified": true,
+      "tensor_count": 775,
+      "shard_count": 4,
+      "inference_evidence": {
+        "recording_id": "20261029-184955-621972",
+        "annotation": "stages/automatic.json",
+        "stages": 4,
+        "review_status": "unreviewed",
+        "test": "actual CUDA bfloat16 timestamped-frame inference; not an accuracy benchmark"
+      }
+    },
+    {
+      "repo": "kakaocorp/kanana-1.5-v-3b-instruct",
+      "revision": "2e00ef13ccec2e99459a8eada18a1bfd05bff44b",
+      "downloaded_s": 1793287486.0970411,
+      "license": "Kanana License Agreement (July 17, 2025)",
+      "inference_tested": true,
+      "safetensors_index_verified": true,
+      "tensor_count": 739,
+      "shard_count": 2,
+      "bytes": 7353301915,
+      "tested_recording": "20261029-184955-621972",
+      "tested_s": 1793288508.260394,
+      "repo_id": "kakaocorp/kanana-1.5-v-3b-instruct",
+      "inference_evidence": {
+        "recording_id": "20261029-184955-621972",
+        "annotation": "stages/models/kanana-v-3b/automatic.json",
+        "review_status": "unreviewed",
+        "test": "actual CUDA bfloat16 inference; no automatic human confirmation"
+      }
+    },
+    {
+      "repo": "google/gemma-3-4b-it",
+      "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+      "downloaded_s": 1793287870.8186338,
+      "license": "Gemma Terms",
+      "safetensors_index_verified": true,
+      "tensor_count": 883,
+      "shard_count": 2,
+      "bytes": 8639628223,
+      "inference_tested": true,
+      "tested_recording": "20261029-184955-621972",
+      "tested_s": 1793288408.0715742,
+      "repo_id": "google/gemma-3-4b-it",
+      "inference_evidence": {
+        "recording_id": "20261029-184955-621972",
+        "annotation": "stages/models/gemma3-4b/automatic.json",
+        "review_status": "unreviewed",
+        "test": "actual CUDA bfloat16 inference; no automatic human confirmation"
+      }
+    }
+  ],
+  "stage_runtime": {
+    "environment": ".venv-vlm",
+    "base": "piper-show via --system-site-packages",
+    "additions_file": "requirements-showonce-vlm.txt",
+    "transformers": "5.21.1",
+    "accelerate": "1.15.0",
+    "tokenizers": "0.23.3",
+    "gpu": "NVIDIA Thor SM110",
+    "dtype": "bfloat16",
+    "fast_delta_kernels": false,
+    "inference_verified": true,
+    "test_only_browser_dependency": "playwright==1.64.1 with installed Google Chrome"
+  },
+  "model_selection": {
+    "catalog": "showonce_models.py",
+    "default": "qwen35-9b",
+    "result_layout": {
+      "all_models": "stages/templates/pick_place_v1/models/<model_id>/",
+      "legacy_free_form": "original stages/ and stages/models/ preserved"
+    },
+    "weights_bundled": false,
+    "runtime_profiles": {
+      "qwen_and_gemma": "requirements-showonce-vlm.txt (.venv-vlm)",
+      "kanana_v": "requirements-showonce-kanana.txt (.venv-vlm-kanana; Transformers 4.51.3)"
+    },
+    "inference_adapters": {
+      "qwen35-9b": "direct timestamped images, shared four-boundary JSON schema",
+      "kanana-v-3b": "direct timestamped images, shared four-boundary JSON schema",
+      "gemma3-4b": "direct timestamped images, shared four-boundary JSON schema"
+    },
+    "comparison_limit": "Fixed pick/place semantics; same source video, 24 RGB samples, common prompt and JSON schema. Displayed time spreads are disagreement; MAE requires explicit human-confirmed boundaries. Video cues do not establish physical RL contact/height/force thresholds.",
+    "actual_test_receipt": "../runs/showonce-template-validation/actual-comparison.json",
+    "shared_structured_output": {
+      "dependency": "lm-format-enforcer==0.11.3",
+      "license": "MIT",
+      "runtimes": "Transformers 4.51.3 and 5.21.1 via compatible tokenizer-data adapter",
+      "temporal_representation": "four fixed transition sample indices; missing boundaries remain null"
+    },
+    "stage_template": {
+      "id": "pick_place_v1",
+      "version": 1,
+      "name": "Pick & Place · SHOW-103 5단계",
+      "stages": [
+        {
+          "code": "approach",
+          "label": "Approach · 접근",
+          "rl_section": 0,
+          "goal": "손이 물체 가까이에 도달하여 파지를 시작할 준비가 됨"
+        },
+        {
+          "code": "grasp",
+          "label": "Grasp · 파지, 들기",
+          "rl_section": 1,
+          "goal": "물체를 확보하고 원래 지지면에서 들어 올림"
+        },
+        {
+          "code": "transfer",
+          "label": "Transfer · 운반",
+          "rl_section": 2,
+          "goal": "물체를 잡은 채 목표 용기 위에 도달함"
+        },
+        {
+          "code": "release",
+          "label": "Release · 개방, 내려놓기",
+          "rl_section": 3,
+          "goal": "목표 위치에 물체를 내려놓고 손의 파지를 해제함"
+        },
+        {
+          "code": "retreat",
+          "label": "Retreat · 후퇴",
+          "rl_section": 4,
+          "goal": "물체는 목표 위치에 남고 손은 물체와 용기에서 물러남"
+        }
+      ],
+      "boundaries": [
+        {
+          "key": "grasp_start",
+          "label": "접근 → 파지",
+          "definition": "The hand has reached close to the object and begins grasping contact/closure; not the start of reaching from far away."
+        },
+        {
+          "key": "transfer_start",
+          "label": "파지, 들기 → 운반",
+          "definition": "A secure grasp has lifted the object clear of its original support. The object follows the hand while held."
+        },
+        {
+          "key": "release_start",
+          "label": "운반 → 개방, 내려놓기",
+          "definition": "While still held, the object reaches above the target container and placement/lowering starts. This is before complete detachment."
+        },
+        {
+          "key": "retreat_start",
+          "label": "개방, 내려놓기 → 후퇴",
+          "definition": "The hand has released/detached from the object at the target and can withdraw independently. The object no longer follows the hand."
+        }
+      ],
+      "rl_mapping": {
+        "source": "show103-stage-reward/src/piper_sim_lab/stage_reward.py:section,main_score",
+        "sections": [
+          "approach",
+          "grasp_lift",
+          "transport",
+          "prepare_release",
+          "retreat"
+        ],
+        "note": "보상 진행 구간의 의미 매핑. 4개 reset 그룹과 구별하며 정책 관측/가중치는 변경하지 않음. 영상은 접촉·높이·힘·안정 시간의 실측 판정을 대체하지 않음."
+      },
+      "rest_policy": "처음 정지는 approach, 마지막 정지는 retreat에 포함. final position은 완료 상태.",
+      "comparison_policy": "동일 영상·샘플·프롬프트·출력 형식으로 4개 경계를 비교. 사용자 확정 전에는 정답 오차를 계산하지 않음."
+    },
+    "legacy_results": "Prior 4/7/6 free-form results remain historical experiments, not a comparison of common stage boundaries.",
+    "default_view": {
+      "model": "qwen35-9b",
+      "model_comparison_visible": false,
+      "internal_comparison_query": "compare=1"
+    }
+  },
+  "geometry_runtime": {
+    "environment": ".venv-geometry",
+    "base": "piper-show via --system-site-packages",
+    "additions_file": "requirements-showonce-geometry.txt",
+    "node": "showonce_geometry_node.py on localhost:8769",
+    "model": "persistent SAM 3 video predictor; shared checkpoint read-only, not bundled",
+    "algorithm": "SAM video masks + RGB-D optical flow rigid motion + gated ICP + object-local UniformTSDFVolume measured surface fusion",
+    "source": "lossless recorded RGB and aligned depth PNG + original frame timestamps",
+    "triton_compiler_override": "TRITON_PTXAS_BLACKWELL_PATH=/usr/local/cuda/bin/ptxas only in isolated geometry process",
+    "native_workaround": "ScalableTSDFVolume empty on this aarch64 wheel; UniformTSDFVolume validated on synthetic plane and actual clip",
+    "output_limit": "observed surfaces only, not guaranteed watertight, pose ambiguity and missing/poor depth remain; not a ground-truth accuracy benchmark",
+    "upstream_real2sim_executed": false,
+    "sam3d_objects_executed": false,
+    "robot_commands": false,
+    "browser_test_receipt": "../runs/showonce-geometry-validation/browser-report.json"
+  },
+  "sam3d_runtime": {
+    "verified": true,
+    "full_inference_verified": true,
+    "profile": ".venv-sam3d",
+    "torch": "2.10.0+cu130",
+    "gpu": "NVIDIA Thor SM110",
+    "python": "3.12.16",
+    "checks": [
+      "CUDA PyTorch3D KNN returns zero self-distance",
+      "CUDA spconv SubMConv3d returns finite 27x8 features",
+      "actual SAM 3D pipeline import"
+    ],
+    "source_revisions": {
+      "real2sim": "a326c9254be4ddce466d23b479d89c24c6bbe236",
+      "sam-3d-objects": "f91db411c50efee93d8db7aeb323885650f6f722",
+      "pytorch3d": "75ebeeaea0908c5527e7b1e305fbc7681382db47",
+      "cumm": "d971d02a0b29b7e6da46186564f37bde77b99dcc",
+      "spconv": "263d6b47425ef843c82f997b12d8b714013d216c",
+      "nvdiffrast": "253ac4fcea7de5f396371124af597e6cc957bfae",
+      "gsplat": "2323de5905d5e90e035f792fe65bad0fedd413e7",
+      "MoGe": "a8c37341bc0325ca99b9d57981cc3bb2bd3e255b",
+      "utils3d": "3913c65d81e05e47b9f367250cf8c0f7462a0900",
+      "kaolin": "ee8b7eca1e56b1b9fd1509fc406f8d8ccbc9240b"
+    },
+    "patches": [
+      "pytorch3d setup use_ninja=True; CUDA13 visibility flags NVCC_FLAGS",
+      "SAM FlexiCubes uses unchanged Kaolin check_tensor extracted with Apache-2.0 license; full Kaolin notebook UI not loaded",
+      "SAM postprocessing xatlas import optional; UV baking disabled",
+      "own adapter uses D435i pointmap, depth_model=None, compile=False, SDPA, no layout render optimization, original vertex-color model mesh"
+    ],
+    "weights_bundled": false,
+    "created_s": 1793329080.1249454,
+    "actual_recording": "20261029-184955-621972",
+    "actual_inferences": 4,
+    "requirements": "requirements-showonce-sam3d.txt",
+    "setup": "setup-showonce-sam3d.sh",
+    "physics": "same precomputed CoACD convex parts used in USD and MuJoCo; actual settling and bowl opening drop tests; Isaac not executed",
+    "parameter_status": "density and friction are assumed, not measured",
+    "model_mesh_completion": "SAM inferred hidden surfaces; independent-keyframe candidate selection, not native multi-view SAM inference",
+    "source_release_note": "team real2sim repository currently has no LICENSE; code redistribution remains a release follow-up, not an obstacle to the authorized local integration",
+    "dependency_metadata_mismatch": "spconv expects cumm<0.8; current source cumm0.8.2 passed actual GPU conv and SAM inference",
+    "weights_in_source": false
+  },
+  "web_simulation_scene": {
+    "node": "showonce_scene_node.py on localhost:8770",
+    "web_adapter": "showonce_scene_api.py",
+    "ui": "showonce_scene_ui.js",
+    "backend": "existing piper-show MuJoCo3.3.7 + NumPy; no new inference dependencies",
+    "renderer": "vendored Three.js0.186.1 GLTFLoader/OBJLoader/OrbitControls",
+    "physics_timestep_s": 0.002,
+    "web_state_target_hz": 20,
+    "scenarios": [
+      "stored initial placement",
+      "cube drop with fixed bowl"
+    ],
+    "body_assets_changed": false,
+    "robot_model_included": false,
+    "robot_hardware_commands": false,
+    "receipt": "../runs/showonce-replay-validation/browser-report.json",
+    "default_mode": "video-time-synchronized estimated RGB-D pose replay; physics is collapsed/opt-in",
+    "replay_adapter": "showonce_replay.py + showonce_replay_math.js",
+    "source_clock": "HTML video decoded mediaTime aligned to source RGB timestamps",
+    "pose_registration": "reference-frame rigid registration to generated SAM asset; constant existing scene support offset preserved",
+    "short_gap_interpolation_max_s": 0.2,
+    "long_gap": "last pose translucent with unresolved/age label; no long-gap interpolation",
+    "display_smoothing": {
+      "default": true,
+      "tau_s": 0.1,
+      "method": "offline symmetric timestamp-aware position EMA and quaternion SLERP",
+      "long_gap_reset_s": 0.2,
+      "source_pose_files_changed": false,
+      "receipt": "../runs/showonce-replay-validation/filter-report.json"
+    }
+  },
+  "policy_deployment_runtime": {
+    "web_entry": "showonce_studio.py /policies",
+    "web_imports": "standard library only; no robot SDK/model load in HTTP process",
+    "worker_entry": "showonce_policy_runtime.py",
+    "worker_python": ".venv-sam3d/bin/python",
+    "worker_dependencies": [
+      "numpy",
+      "scipy (recorded input conversion)",
+      "trimesh (recorded reference mesh inspection)",
+      "C++17 compiler (existing CPU QP planner)"
+    ],
+    "existing_runtime_root": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp",
+    "existing_runtime_files": "runtime/src/piper_policy_runtime and scripts/show100/robot_io.py,run_robot.py; read-only reuse",
+    "sdk_import": "pyAgxArm and PassiveCAN are constructed only by explicit terminal shadow/run",
+    "portable_public_installation_complete": false,
+    "portability_remaining": "Package the existing controller/transport/runtime source and geometry archive with their licenses before publishing; current installation references the local project.",
+    "package_contract": "release/policy-deployment-contract.json",
+    "validation_scope": "48 unit tests and actual SHOW-100 export CPU/browser/mock/recorded-input checks; no hardware execution or SHOW-103 task success claim",
+    "live_input_source": "Existing live_camera_only perception protocol; offline video/FP results are not accepted as robot feedback. No automatic camera/SAM ownership switch."
+  },
+  "current_publication_preparation": {
+    "reviewed_on": "2026-11-05",
+    "installation": "../INSTALLATION.md",
+    "workers": "../WORKERS.md",
+    "source_manifest": "../external-dependencies.json",
+    "historical_inventory": true
+  }
+}

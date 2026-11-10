@@ -1,0 +1,35 @@
+{
+  "verified": true,
+  "full_inference_verified": true,
+  "profile": ".venv-sam3d",
+  "torch": "2.10.0+cu130",
+  "gpu": "NVIDIA Thor SM110",
+  "python": "3.12.16",
+  "checks": [
+    "CUDA PyTorch3D KNN returns zero self-distance",
+    "CUDA spconv SubMConv3d returns finite 27x8 features",
+    "actual SAM 3D pipeline import"
+  ],
+  "source_revisions": {
+    "real2sim": "a326c9254be4ddce466d23b479d89c24c6bbe236",
+    "sam-3d-objects": "f91db411c50efee93d8db7aeb323885650f6f722",
+    "pytorch3d": "75ebeeaea0908c5527e7b1e305fbc7681382db47",
+    "cumm": "d971d02a0b29b7e6da46186564f37bde77b99dcc",
+    "spconv": "263d6b47425ef843c82f997b12d8b714013d216c",
+    "nvdiffrast": "253ac4fcea7de5f396371124af597e6cc957bfae",
+    "gsplat": "2323de5905d5e90e035f792fe65bad0fedd413e7",
+    "MoGe": "a8c37341bc0325ca99b9d57981cc3bb2bd3e255b",
+    "utils3d": "3913c65d81e05e47b9f367250cf8c0f7462a0900",
+    "kaolin": "ee8b7eca1e56b1b9fd1509fc406f8d8ccbc9240b"
+  },
+  "patches": [
+    "pytorch3d setup use_ninja=True; CUDA13 visibility flags NVCC_FLAGS",
+    "SAM FlexiCubes uses unchanged Kaolin check_tensor extracted with Apache-2.0 license; full Kaolin notebook UI not loaded",
+    "SAM postprocessing xatlas import optional; UV baking disabled",
+    "own adapter uses D435i pointmap, depth_model=None, compile=False, SDPA, no layout render optimization, original vertex-color model mesh"
+  ],
+  "weights_bundled": false,
+  "created_s": 1793329080.1249454,
+  "actual_recording": "20261029-184955-621972",
+  "actual_inferences": 4
+}

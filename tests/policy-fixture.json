@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "actor": "mlp",
+  "recurrent_width": 0,
+  "head_sizes": [],
+  "observation_size": 49,
+  "action_size": 7,
+  "observation_layout": [
+    {
+      "name": "joint_position_rad",
+      "start": 0,
+      "stop": 6
+    },
+    {
+      "name": "joint_velocity_rad_s",
+      "start": 6,
+      "stop": 12
+    },
+    {
+      "name": "servo_target_minus_joint_rad",
+      "start": 12,
+      "stop": 18
+    },
+    {
+      "name": "tcp_position_base_m",
+      "start": 18,
+      "stop": 21
+    },
+    {
+      "name": "tcp_rotation_vector_base_rad",
+      "start": 21,
+      "stop": 24
+    },
+    {
+      "name": "gripper_full_width_m",
+      "start": 24,
+      "stop": 25
+    },
+    {
+      "name": "block_position_base_m",
+      "start": 25,
+      "stop": 28
+    },
+    {
+      "name": "block_rotation_vector_base_rad",
+      "start": 28,
+      "stop": 31
+    },
+    {
+      "name": "bowl_position_base_m",
+      "start": 31,
+      "stop": 34
+    },
+    {
+      "name": "block_minus_tcp_m",
+      "start": 34,
+      "stop": 37
+    },
+    {
+      "name": "block_minus_bowl_m",
+      "start": 37,
+      "stop": 40
+    },
+    {
+      "name": "perceived_block_half_size_m",
+      "start": 40,
+      "stop": 41
+    },
+    {
+      "name": "gripper_final_goal_normalized",
+      "start": 41,
+      "stop": 42
+    },
+    {
+      "name": "previous_normalized_policy_action",
+      "start": 42,
+      "stop": 49
+    }
+  ],
+  "action_contract": "normalized [-1,1]: base-frame linear/angular twist commands (6) and gripper action (1); NOT direct joint/CAN commands",
+  "environment": {
+    "action_cost": 0.001,
+    "action_delay_max": 0.05,
+    "action_rate_cost": 0.01,
+    "action_repeat": 1,
+    "base_height": 0.015,
+    "batch_capacity": 1024,
+    "block_friction_scale": 0.1,
+    "block_half": 0.025,
+    "block_mass": 0.07,
+    "block_mass_range": [
+      0.056,
+      0.084
+    ],
+    "block_rgba": [
+      0.1,
+      0.8,
+      0.2,
+      1.0
+    ],
+    "block_x": [
+      0.25,
+      0.4
+    ],
+    "block_y": [
+      -0.3,
+      0.3
+    ],
+    "bowl_arm_collision": true,
+    "bowl_floor": 0.003,
+    "bowl_free": true,
+    "bowl_height": 0.067,
+    "bowl_mass": 0.11,
+    "bowl_r_bottom": 0.042,
+    "bowl_r_rim": 0.075,
+    "bowl_segments": 12,
+    "bowl_wall": 0.003,
+    "bowl_x": [
+      0.25,
+      0.35
+    ],
+    "bowl_y": [
+      -0.3,
+      0.3
+    ],
+    "ccd_pairs_per_env": 16,
+    "contacts_per_env": 384,
+    "control_acceleration": 8.0,
+    "control_floor": 0.0,
+    "control_mode": "qp",
+    "ctrl_dt": 0.1,
+    "episode_length": 80,
+    "finger_bridge": true,
+    "grasp_distance": 0.02,
+    "gripper_binary": true,
+    "gripper_force": 3.0,
+    "gripper_gain_scale": [
+      0.8,
+      1.25
+    ],
+    "gripper_goal_obs": true,
+    "gripper_kp": 400.0,
+    "gripper_max": 0.05,
+    "gripper_mode": "ternary_latched",
+    "gripper_rate": 0.01,
+    "gripper_threshold": 0.5,
+    "ik_damping": 0.05,
+    "impl": "warp",
+    "inside_reward": 5.0,
+    "jacobian": "mjx",
+    "lift_height": 0.02,
+    "lift_reset_height": 0.08,
+    "max_ang_vel": 1.0,
+    "max_constraints_per_env": 1024,
+    "max_joint_vel": 1.5,
+    "max_lin_vel": 0.1,
+    "max_target_lag": 0.15,
+    "nominal_qpos": [
+      0.0,
+      0.523,
+      -0.45,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "obj_pos_noise": 0.01,
+    "obj_pos_noise_cap": 0.03,
+    "obj_pose_delay_max": 0.15,
+    "obj_rot_noise": 5.0,
+    "obs_randomization": true,
+    "physics_randomization": true,
+    "pregrasp_height": 0.03,
+    "preinside_height": 0.03,
+    "reach_scale": 5.0,
+    "release_bonus": 2.0,
+    "reset_ik_flip": true,
+    "reset_ik_seed": [
+      0.0,
+      1.743,
+      -1.087,
+      0.0,
+      1.002,
+      0.0
+    ],
+    "reset_joint_noise": 0.05,
+    "reset_stage_probs": [
+      0.5,
+      0.2,
+      0.2,
+      0.1
+    ],
+    "reset_table_grid": 4,
+    "reset_table_yaws": 8,
+    "robot_model": "piper_v100",
+    "robot_state_delay_max": 0.05,
+    "sim_dt": 0.005,
+    "size_noise": 0.1,
+    "size_obs": true,
+    "solver_iterations": 8,
+    "solver_ls_iterations": 20,
+    "spawn_candidates": 16,
+    "spawn_max_radius": 0.4,
+    "spawn_min_distance": 0.14,
+    "stage_obs": false,
+    "static_pos_noise": 0.005,
+    "static_pos_noise_cap": 0.015,
+    "table_friction_range": [
+      0.3,
+      0.6
+    ],
+    "table_priority": 2,
+    "tcp_local_z": 0.1385,
+    "tracking_extra": 0.02,
+    "tracking_horizon": 0.05,
+    "tracking_margin": 0.02,
+    "tracking_timeout": 0.5,
+    "tracking_weight": 100.0,
+    "task": "show76_ternary_qp"
+  },
+  "training_step": 0,
+  "checkpoint_format": "brax-orbax",
+  "source_checkpoint": "synthetic://tests/no-trained-policy",
+  "code_commit": "synthetic-test-fixture",
+  "weights_sha256": "generated",
+  "cumulative_training_steps": 0,
+  "warm_start": null,
+  "kinematics": {
+    "robot_model": "piper_v100",
+    "tcp_local_position_m": [
+      0.0,
+      0.0,
+      0.1385
+    ],
+    "piper_xml_sha256": "828ed79064944d277c595fb08db19c9efa185ec2ca5e3f85347c6f8d214db3ea",
+    "observation_frame": "base_link",
+    "base_height_m": 0.015
+  }
+}

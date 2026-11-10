@@ -1,0 +1,11 @@
+--- a/showonce_capture_node.py
++++ b/showonce_capture_node.py
+@@ -1,7 +1,7 @@
+ from show_env import ROOT
+ def default_calibration():
+     from pathlib import Path
+-    return Path("/home/pi_lab/songjisu/show33/runs/snap-capture-20261028-195434/T_base_cam_robot.json")
++    return Path(__file__).resolve().parent/"calib/current.json"
+ #!/usr/bin/env python3
+ """Single-owner D435i capture node. No SAM, policy, CAN or robot commands."""
+ import argparse

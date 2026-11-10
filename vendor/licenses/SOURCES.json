@@ -1,0 +1,5 @@
+{
+  "SAM3-LICENSE.txt": "https://raw.githubusercontent.com/facebookresearch/sam3/7f473cfd983d5eb43040ff608f66bff0d7bdcb53/LICENSE",
+  "SAM3D-LICENSE.txt": "https://raw.githubusercontent.com/facebookresearch/sam-3d-objects/f91db411c50efee93d8db7aeb323885650f6f722/LICENSE",
+  "PYTORCH3D-LICENSE.txt": "https://raw.githubusercontent.com/facebookresearch/pytorch3d/75ebeeaea0908c5527e7b1e305fbc7681382db47/LICENSE"
+}

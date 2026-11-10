@@ -1,0 +1,10 @@
+# Historical Thor additions, not a standalone portable environment lock. See docs/WORKERS.md.
+# Over piper-show plus the project .venv-sam3d native geometry dependencies.
+# Source/weights/native build provenance: docs/source-inventory/foundationpose-source.json
+warp-lang==1.18.0
+ruamel.yaml==0.19.1
+transformations==2026.8.8
+kornia==0.9.0
+h5py==3.16.0
+scikit-learn==1.9.1
+pybind11==3.1.0

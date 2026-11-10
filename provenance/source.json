@@ -1,0 +1,8 @@
+{
+  "component": "studio",
+  "source_path_local_only": "/home/pi_lab/piper_ws",
+  "source_git_commit": null,
+  "live_sources_modified": false,
+  "extraction": "tracked snapshot for learning; selected modules for Studio/runtime",
+  "runtime_version": "0.4.0"
+}

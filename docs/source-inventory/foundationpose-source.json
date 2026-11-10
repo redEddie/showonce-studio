@@ -1,0 +1,35 @@
+{
+  "source": "https://github.com/shingarey/FoundationPose-plus-plus",
+  "local_source": "/home/pi_lab/songjisu/third_party/FoundationPose-plus-plus/FoundationPose",
+  "git_revision": "58aa7154de23ae86d542366858fc6bcca3b747b0",
+  "base_estimator_sha256": "c0fa5835ad0e93732da0a33937e9cc20476d4a725d64e0ff73a6a83a74365038",
+  "weights": "existing downloaded official FoundationPose scorer/refiner, read-only",
+  "runtime_python": "/home/pi_lab/piper_ws/.venv-foundationpose/bin/python",
+  "shared_readonly_geometry_packages": "/home/pi_lab/piper_ws/.venv-sam3d/lib/python3.12/site-packages",
+  "local_patches": [
+    {
+      "file": "Utils.py",
+      "description": "Explicit crop-offset and intrinsic tensor dtype/device for NumPy 2.x and torch 2.10",
+      "sha256": "5b7cf8a18292c05e2f1906b6c85da99e0ce6833bc635de928b67ac663226d50a"
+    }
+  ],
+  "native_build": {
+    "module": "mycpp.build.mycpp",
+    "python_abi": "cp312-aarch64-linux-gnu",
+    "eigen_cmake": "/home/pi_lab/songjisu/third_party/eigen/share/eigen3/cmake",
+    "boost_root": "/home/pi_lab/songjisu/third_party/boost",
+    "source_environments_modified": false
+  },
+  "checkpoints": [
+    {
+      "name": "2023-10-28-18-33-37",
+      "bytes": 68220109,
+      "sha256": "774700586ddc435d408fc01c9809c43e151232936369dfbea0f0f964ba471d60"
+    },
+    {
+      "name": "2024-01-11-20-02-45",
+      "bytes": 190229389,
+      "sha256": "81924d384bf5c26c646ee4783104982ae3d1e049c181c36641b6a7aeae494c26"
+    }
+  ]
+}

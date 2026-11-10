@@ -1,0 +1,7 @@
+{
+  "repo": "https://github.com/NVIDIAGameWorks/kaolin",
+  "revision": "ee8b7eca1e56b1b9fd1509fc406f8d8ccbc9240b",
+  "source": "kaolin/utils/testing.py:check_tensor",
+  "license": "Apache-2.0",
+  "function_modified": false
+}

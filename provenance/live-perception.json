@@ -1,0 +1,86 @@
+{
+  "extracted_on": "2026-11-05",
+  "scope": "Private team-owned integration extraction authorized by project owner. Preserve source attribution; project license remains unselected. No model weights, private calibration or robot control routines are bundled.",
+  "team_source": "Song Jisu SHOW-33 live perception; no Git revision available in the source directory",
+  "files": [
+    {
+      "target": "src/showonce_studio/perception/bowl_image.py",
+      "source": "bowl_image.py",
+      "source_sha256": "affeef4dde4e14685fdf05833fd134c4a616f5bde90fd4160ea6057ff80298eb",
+      "symbols": "all numeric estimators; import path only adjusted"
+    },
+    {
+      "target": "src/showonce_studio/perception/cube_image.py",
+      "source": "cube_image.py",
+      "source_sha256": "cfd98e332e938734e2fd98ebe65915ef451ce6af014b4cead1a4491452fda969",
+      "symbols": "all numeric estimators; import path only adjusted"
+    },
+    {
+      "target": "src/showonce_studio/perception/sam.py",
+      "source": "live_shadow.py",
+      "source_sha256": "888dcc20136c294fb6bd11f2cda316ef65ef3c45b55b349d5f316add70b1bac1",
+      "symbols": [
+        "sam_worker",
+        "Sam"
+      ]
+    },
+    {
+      "target": "src/showonce_studio/perception/tracking.py",
+      "source": "live_shadow.py",
+      "source_sha256": "888dcc20136c294fb6bd11f2cda316ef65ef3c45b55b349d5f316add70b1bac1",
+      "symbols": [
+        "Tracker.__init__",
+        "Tracker.run"
+      ]
+    },
+    {
+      "target": "src/showonce_studio/perception/workers.py",
+      "source": "perception_workers.py",
+      "source_sha256": "c759ac017e02b4d2a6dd62050bf90c1fdd017d94e7338918418f63e48156096a",
+      "symbols": [
+        "RetainedSam",
+        "ImageBowlTracker",
+        "diagnostics",
+        "object_status"
+      ]
+    },
+    {
+      "target": "src/showonce_studio/perception/transforms.py",
+      "source": "common.py",
+      "source_sha256": "fe8e2ef6cedba428ae5aefaf2b93e0b86d4a9f450a4c142096888c3932b280d1",
+      "symbols": [
+        "quat_wxyz"
+      ]
+    },
+    {
+      "target": "src/showonce_studio/perception/data/objects_task.json",
+      "source": "SHOW-33 config/objects_task.json",
+      "source_sha256": "8af11c550ee7d96fedddae41c6bee8cf6e612fbe935bb7d0283540e10e358795",
+      "symbols": "measured object dimensions/prompts unchanged"
+    },
+    {
+      "target": "src/showonce_studio/perception/protocol.py",
+      "source": "inspect_perception.py",
+      "source_sha256": "f863ecfca6f2e60c5a603d76b5e8550c01a90b90e69606b6102ce9327388905d",
+      "symbols": [
+        "read",
+        "write",
+        "provenance",
+        "overlay",
+        "PreviewWriter",
+        "objects_document",
+        "save_sam_debug"
+      ]
+    },
+    {
+      "target": "src/showonce_studio/perception/runner.py",
+      "source": "inspect_perception.py",
+      "source_sha256": "f863ecfca6f2e60c5a603d76b5e8550c01a90b90e69606b6102ce9327388905d",
+      "symbols": [
+        "record closure",
+        "run_live lifecycle",
+        "reporting; CLI and broker initialization packaged"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "schema": "showonce_sam_worker_validation_v1",
+  "status": "passed",
+  "gpu": "NVIDIA Thor",
+  "packages": {
+    "sam3": "0.1.0",
+    "numpy": "1.26.4",
+    "torch": "2.10.0+cu130",
+    "torchvision": "0.25.0+cu130",
+    "open3d": "0.20.0",
+    "showonce-studio": "0.2.0",
+    "piper-runtime": "0.5.0"
+  },
+  "checkpoint_sha256": "9999e2341ceef5e136daa386eecb55cb414446a00ac2b55eb2dfd2f7c3cf8c9e",
+  "source_rgb_sha256": [
+    "9d4db805562e0b10271de21ec3f463510dfc7814795f61eecb4d472f917fcb55",
+    "d7411239cc8937e155402a62ab385419f81db4b655c394dfe2c8164cb3da2f23",
+    "fa1898f00b18be2271c7725f4fdfeed76e047cf677015e8576d060ca308ed5f4",
+    "2ec34d2becef434d622b63b338604b4a313af75d6fc2ca6d91de244d0ce4e9e4"
+  ],
+  "source_frames": 4,
+  "load_s": 12.565977385034785,
+  "total_s": 19.757179751992226,
+  "tracked_objects": {
+    "green cube": [
+      {
+        "index": 0,
+        "objects": 1,
+        "mask_pixels": 1329,
+        "max_score": 0.9452055096626282,
+        "mask_shape": [
+          1,
+          480,
+          848
+        ],
+        "mask_sha256": "7411a5cb47ee2b0c4d54237aa954c01a7b2c4885ab63432b51d849f39fb37af9"
+      },
+      {
+        "index": 1,
+        "objects": 1,
+        "mask_pixels": 1357,
+        "max_score": 0.9452055096626282,
+        "mask_shape": [
+          1,
+          480,
+          848
+        ],
+        "mask_sha256": "751adaf3820cc59c24ffef04356fa19319623328ed8584257431be61327be1fc"
+      },
+      {
+        "index": 2,
+        "objects": 1,
+        "mask_pixels": 1313,
+        "max_score": 0.9452055096626282,
+        "mask_shape": [
+          1,
+          480,
+          848
+        ],
+        "mask_sha256": "a115cdb74329eec1411d51b5985ed8603b00d3caf99438dda3b54c57b5fadde3"
+      },
+      {
+        "index": 3,
+        "objects": 1,
+        "mask_pixels": 1356,
+        "max_score": 0.9452055096626282,
+        "mask_shape": [
+          1,
+          480,
+          848
+        ],
+        "mask_sha256": "53c21f3d209bc101d10991e866fa51636445a67cb4f95ce03608f37f8ebd8c61"
+      }
+    ],
+    "bowl": [
+      {
+        "index": 0,
+        "objects": 1,
+        "mask_pixels": 5960,
+        "max_score": 0.9179486632347107,
+        "mask_shape": [
+          1,
+          480,
+          848
+        ],
+        "mask_sha256": "dea9c78e3221a486fdf5a9bf91bf07c12a0b4e96648353647462db28e30749ac"
+      },
+      {
+        "index": 1,
+        "objects": 1,
+        "mask_pixels": 5994,
+        "max_score": 0.9179486632347107,
+        "mask_shape": [
+          1,
+          480,
+          848
+        ],
+        "mask_sha256": "e9c58301b852030b1bad92c4911ba05351eba0a5ead3fc9b001af09f10aa3d2c"
+      },
+      {
+        "index": 2,
+        "objects": 1,
+        "mask_pixels": 5997,
+        "max_score": 0.9179486632347107,
+        "mask_shape": [
+          1,
+          480,
+          848
+        ],
+        "mask_sha256": "c7bbcbfd7f2ca36ded9da4689cb9014edc1eb97a4158debd56a93a40ad74a971"
+      },
+      {
+        "index": 3,
+        "objects": 1,
+        "mask_pixels": 6014,
+        "max_score": 0.9179486632347107,
+        "mask_shape": [
+          1,
+          480,
+          848
+        ],
+        "mask_sha256": "203c24b1f316509bc7756aff4dfab3c17db2fa454c1f1621ea70e570685b8505"
+      }
+    ]
+  },
+  "pip_check": "passed",
+  "camera_opened": false,
+  "robot_commands_sent": false,
+  "weights_or_frames_bundled": false,
+  "scope": "Actual saved-RGB video prompting/propagation, not live camera, depth reconstruction or task success.",
+  "date": "2026-11-05",
+  "architecture": "two Python environments, existing HTTP/file protocol",
+  "source_revision": "7f473cfd983d5eb43040ff608f66bff0d7bdcb53",
+  "source_modified": false,
+  "source_metadata_modified": false,
+  "source_patch": null,
+  "clean_venv": true,
+  "system_site_packages": false,
+  "editable_install": false,
+  "runtime_content_sha256": "e197cf618137f8327312ae06b303f288e5c7e0617c4a121d6cdf7022edcdf743",
+  "environment_roles": {
+    "studio_control_numpy": "2.5.4",
+    "sam_worker_numpy": "1.26.4"
+  },
+  "runtime_golden_tests": {
+    "numpy_1_26_4_passed": 12,
+    "numpy_2_5_4_passed": 12
+  },
+  "geometry_tests_passed": 5,
+  "previous_numpy2_experiment_comparison": {
+    "scope": "Same checkpoint and four RGB frames, previous NumPy2 metadata-patched SAM versus original SAM with NumPy1.26.4. Not a general task-accuracy comparison.",
+    "comparisons": [
+      {
+        "object": "green cube",
+        "frame": 0,
+        "mask_identical": true,
+        "score_abs_difference": 0.0
+      },
+      {
+        "object": "green cube",
+        "frame": 1,
+        "mask_identical": true,
+        "score_abs_difference": 0.0
+      },
+      {
+        "object": "green cube",
+        "frame": 2,
+        "mask_identical": true,
+        "score_abs_difference": 0.0
+      },
+      {
+        "object": "green cube",
+        "frame": 3,
+        "mask_identical": true,
+        "score_abs_difference": 0.0
+      },
+      {
+        "object": "bowl",
+        "frame": 0,
+        "mask_identical": true,
+        "score_abs_difference": 0.0
+      },
+      {
+        "object": "bowl",
+        "frame": 1,
+        "mask_identical": true,
+        "score_abs_difference": 0.0
+      },
+      {
+        "object": "bowl",
+        "frame": 2,
+        "mask_identical": true,
+        "score_abs_difference": 0.0
+      },
+      {
+        "object": "bowl",
+        "frame": 3,
+        "mask_identical": true,
+        "score_abs_difference": 0.0
+      }
+    ]
+  },
+  "ipc": {
+    "status": "passed",
+    "client_numpy": "2.5.4",
+    "worker_environment": {
+      "numpy": "1.26.4",
+      "sam3": "0.1.0"
+    },
+    "transport": "existing HTTP endpoints + JSON/PNG files",
+    "object_frames": {
+      "green_block": [
+        1329,
+        1357,
+        1313,
+        1356
+      ],
+      "bowl": [
+        5960,
+        5994,
+        5997,
+        6014
+      ]
+    },
+    "model_retained": true,
+    "one_worker_process": true,
+    "camera_opened": false,
+    "robot_commands_sent": false,
+    "verification_worker_stopped": true
+  },
+  "nvidia_wheel_repair": {
+    "source": "Official PyTorch cu130 index / NVIDIA wheel",
+    "version": "0.8.0",
+    "original_sha256": "400c6ed1cf6780fc6efedd64ec9f1345871767e6a1a0a552a1ea0578117ea77c",
+    "corrected_sha256": "e0e3acf9d3dd7f998580351cb145c75244c1940c611e381d39ca1e754e067eef",
+    "original_metadata_tag": "py3-none-manylinux2014_sbsa",
+    "corrected_metadata_tag": "py3-none-manylinux2014_aarch64",
+    "elf_machine": "AArch64 (183)",
+    "preserved_files": 5,
+    "binary_and_license_contents_unchanged": true,
+    "note": "--no-deps is used only to download one artifact; installation uses normal dependency checking."
+  }
+}

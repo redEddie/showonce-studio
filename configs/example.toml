@@ -1,0 +1,29 @@
+# Copy to configs/local.toml, or set SHOWONCE_CONFIG to another file.
+# No user's calibration, policy, token or camera serial is bundled.
+[paths]
+home = "~/.local/share/showonce-studio"
+third_party = "~/.local/share/showonce-studio/third_party"
+models = "~/models"
+calibration = "~/.local/share/showonce-studio/calib/current.json"
+sam_checkpoint = "~/models/sam3/sam3.pt"
+# Workers default to the current interpreter. Set absolute paths only locally.
+# [python]
+# vlm = "/path/to/vlm/bin/python"
+# geometry = "/path/to/geometry/bin/python"
+# sam3d = "/path/to/sam3d/bin/python"
+# calibration = "/path/to/native-calibration/bin/python"  # defaults to foundationpose
+# foundationpose = "/path/to/foundationpose/bin/python"
+# policy = "/path/to/control/bin/python"
+# robot = "/path/to/sdk/bin/python"
+[ports]
+web = 8765
+capture = 8768
+geometry = 8769
+scene = 8770
+
+# Native cube/bowl perception. The capture node owns D435i once;
+# this persistent worker subscribes to its aligned RGB-D frames.
+# [live_vision]
+# autostart = true
+# python = "/path/to/showonce-studio/.venv-sam/bin/python"
+# objects = "/path/to/custom_objects.json"  # default: packaged measured cube/bowl definitions

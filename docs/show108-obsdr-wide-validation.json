@@ -1,0 +1,78 @@
+{
+  "policy_id": "ee9da8b8f493eaa56c3c",
+  "prior_policy_preserved": "e62899a3bc91c4c241d6",
+  "release": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-obsdr-wide-14plus2u-20261101",
+  "hardware_commands_sent": false,
+  "validation_scope": "Export parity, input construction, reference planner and CPU mock. Not real task success.",
+  "actor": {
+    "status": "passed",
+    "actor": "mlp_lstm",
+    "steps": 256,
+    "batch": 4,
+    "max_action_abs_error": 9.5367431640625e-07,
+    "state_and_logit_max_abs_error": {
+      "logits": 3.814697265625e-06,
+      "memory_c": 3.814697265625e-06,
+      "memory_h": 1.4901161193847656e-06
+    },
+    "policy_only_cpu_latency_ms": {
+      "p50": 0.08669198723509908,
+      "p95": 0.08943622815422714
+    },
+    "robot_connection": "none",
+    "scope": "synthetic export parity vectors; not a task success evaluation"
+  },
+  "observation": {
+    "status": "passed",
+    "cases": 64,
+    "observation_size": 49,
+    "max_abs_error": 4.76837158203125e-07,
+    "reference": "original _get_obs with CPU MuJoCo FK, zero observation delay/noise",
+    "source_sha256": "d171ec79e3266904ec515e71a7a40b0e81c45df48ceb9bd28c25ab516f439018",
+    "hardware_commands_sent": false,
+    "scope": "input arithmetic and coordinate conventions; not camera calibration accuracy"
+  },
+  "controller": {
+    "status": "passed",
+    "reference": "SHOW-108 release original JAX checked_plan, FP32",
+    "cases": 32,
+    "matching_acceptance_decisions": 32,
+    "accepted": 31,
+    "max_reference_position_abs_error_rad": 7.013638165798142e-07,
+    "max_plan_state_abs_error": 7.648872468501988e-05,
+    "state_tolerance": 0.005,
+    "source_sha256": {
+      "smooth_plan.py": "652dc253b9f3c0733dd9cf6aab2ac7993fbfb684cd7ab0b7efe4b5bb8e9fad23",
+      "tracking_qp.py": "19560529019a3089f13c83ed5b1eb80ea5c9b33b59c7c353637f5051e9f92970",
+      "hierarchy_env.py": "907a32e650137ebf0bc3f9ad7a1ccf51a81c1cc3d65d217170589373e83da2b8",
+      "hierarchy.py": "9a9cb71f0b77a42ab2ca9f166047e691ed9e6c8241302d31e27d0fd4dd7ed97a",
+      "controllers.py": "9a686cbe43aaed843bf89cfd8d25304220491eb22871e52fc6c3d288556cfd36"
+    },
+    "hardware_commands_sent": false,
+    "scope": "reference planning equations only; no physics or real robot validation"
+  },
+  "browser": {
+    "selected_policy": "ee9da8b8f493eaa56c3c",
+    "summary": "선정 완료 모델 · MLP 256 → 64 → LayerNorm → LSTM 128 · 원본 가중치와 LSTM 상태를 보존합니다. 학습 관측 DR 켜짐 · 큐브 스폰 X 100~500mm / Y -300~300mm. 부모 14배 + 추가 2배의 가중치·정규화 통계를 함께 적용합니다.",
+    "checks": "추론 · 통과\nQP 모의 실행 · 통과\n영상 입력 · 검사 전\n실기 · 미검증",
+    "copy_command": "python showonce_policy.py run --policy-id ee9da8b8f493eaa56c3c --seconds 10.0 --calib /home/pi_lab/songjisu/show33/runs/snap-capture-20261028-195434/T_base_cam_robot.json --perception-dir /home/pi_lab/piper_ws/runs/show100-vision-studio-20261101-152530-63be78",
+    "browser_requests": [
+      {
+        "kind": "policy",
+        "policy_id": "ee9da8b8f493eaa56c3c",
+        "mode": "run",
+        "seconds": 10,
+        "recording_id": "20261030-210042-579290",
+        "calibration": "/home/pi_lab/songjisu/show33/runs/snap-capture-20261028-195434/T_base_cam_robot.json",
+        "perception_dir": "/home/pi_lab/piper_ws/runs/show100-vision-studio-20261101-152530-63be78",
+        "execution": "command",
+        "channel": "can_piper"
+      }
+    ],
+    "hardware_commands_sent": false,
+    "old_policy_still_selectable": true,
+    "mobile_overflow": false,
+    "page_errors": []
+  },
+  "tests": "72 passed"
+}

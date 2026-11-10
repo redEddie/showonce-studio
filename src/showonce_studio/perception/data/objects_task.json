@@ -1,0 +1,46 @@
+{
+ "_comment": "SHOW-73 정책 과제 물체(실측 치수, 2026-10-21 자 측정). 원점은 시뮬(piper-sim-lab pick_place)과 같게: 큐브 = 상자 중심, 그릇 = 바닥 중심(테이블 면)",
+ "objects": [
+  {
+   "id": "green_block",
+   "phrase": "green cube",
+   "color_rgb": [
+    0,
+    220,
+    150
+   ],
+   "symmetry": "cube",
+   "size": {
+    "type": "box",
+    "half_extents": [
+     0.025,
+     0.025,
+     0.025
+    ],
+    "source": "자 실측: 모서리 50 mm 정육면체",
+    "physical_dimensions_verified": true,
+    "verification": "자 실측(2026-10-21) + 사진 재투영 확인(scripts/check_objects.py): 큐브 높이 52.6 mm/윗면 52.8×50.3 mm, 그릇 높이 74.3 mm"
+   }
+  },
+  {
+   "id": "bowl",
+   "phrase": "striped bowl",
+   "color_rgb": [
+    50,
+    100,
+    230
+   ],
+   "symmetry": "z_axis",
+   "size": {
+    "type": "bowl",
+    "rim_radius": 0.075,
+    "bottom_radius": 0.045,
+    "height": 0.071,
+    "source": "자 실측: 윗면 지름 150 mm, 아랫면 지름 90 mm, 높이 71 mm",
+    "physical_dimensions_verified": true,
+    "verification": "자 실측(2026-10-21) + 사진 재투영 확인(scripts/check_objects.py): 큐브 높이 52.6 mm/윗면 52.8×50.3 mm, 그릇 높이 74.3 mm"
+   }
+  }
+ ],
+ "not_in_task": "그릇 안 3 cm 정육면체들(실측)은 정책 과제 물체가 아니다. 시뮬 그릇은 비어 있다"
+}

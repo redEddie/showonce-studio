@@ -1,0 +1,45 @@
+{
+  "schema": "showonce_manual_hardware_result_v1",
+  "date": "2026-11-10",
+  "result_source": "user_confirmation_in_conversation",
+  "model": "SHOW-108 MLP+LSTM observation-DR wide-spawn 24u",
+  "policy_id": "1a361f3b4126da160d07",
+  "checkpoint_step": 33554432,
+  "cumulative_training_steps": 201326592,
+  "checkpoint_sha256": "84e064bf50d34c30b346f08c109a387b0d4b1ca58fdeb30b93db638380d44306",
+  "weights_sha256": "d70b4081d5bf2599ec97b2c329127fff2236fdfcf75c959294b643abd9cd345c",
+  "source_branch": "codex/show108-mlp-lstm-24u-final",
+  "source_commit": "939bdb623a6bd641152388429396b8ad74e1e70a",
+  "attempts": 10,
+  "successes": 10,
+  "failures": 0,
+  "observed_success_rate": 1.0,
+  "success_definition": "User visually confirmed the cube was picked up, transported, and released into the target bowl. A-return is not required.",
+  "objects": {
+    "cube": "green cube, nominal edge50mm",
+    "target": "striped bowl"
+  },
+  "assessment": {
+    "method": "manual user confirmation",
+    "automatic_success_detection": false,
+    "automatic_trial_aggregation": false,
+    "independent_agent_video_review": false,
+    "individual_trial_log_ids_assigned": false,
+    "scope": "Aggregate result for the10trials reported by the user; not inferred from runtime success flags or simulated outcomes."
+  },
+  "configuration_snapshot_at_recording": {
+    "studio_version": "0.3.0",
+    "runtime_version": "0.5.0",
+    "runtime_implementation_sha256": "e197cf618137f8327312ae06b303f288e5c7e0617c4a121d6cdf7022edcdf743",
+    "runtime_profile_id": "show108-mlp-lstm-v1",
+    "tcp_local_position_m": [
+      0.0,
+      0.0,
+      0.1385
+    ],
+    "calibration_sha256": "6da7bed7525ef976bc3ccb8fc36201b80426acfe777e240bb68ea70567e2cea5",
+    "scope": "Current configured identity when this record was saved; no separately frozen per-trial setup or timestamps are claimed."
+  },
+  "closeout_decision": "Finish the current pipeline with this manual10/10record; do not implement automatic success-rate aggregation.",
+  "code_or_policy_changes": false
+}

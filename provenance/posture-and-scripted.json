@@ -1,0 +1,53 @@
+{
+  "source_owner": "SongJisu / ShowOnce team integration; private extraction authorized",
+  "license_status": "Project publication license pending; repository remains private",
+  "posture_source": {
+    "path": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/scripts/show100/run_robot.py",
+    "sha256": "84384106cbd69563b21656b9200ac533cb5dbea90324d4752c36821407a83349",
+    "symbols": [
+      "validate_state",
+      "wait_feedback",
+      "benchmark",
+      "make_controller",
+      "move_posture",
+      "home"
+    ],
+    "mode": "preserved deployed 200Hz unshaped posture controller; experimental 50Hz wire monitor excluded"
+  },
+  "controller_configuration_source": {
+    "path": "/home/pi_lab/Documents/Codex/2026-10-23/new-chat/work/show100-ternary-dls-qp/runs/show100/real-prep/policy-50m/policy.json",
+    "sha256": "9521d33551695b042f15bf1bbffb24cc0c19aff964e1ad46cc50b8370aa51506",
+    "keys": [
+      "base_height",
+      "control_acceleration",
+      "control_floor",
+      "control_mode",
+      "ctrl_dt",
+      "gripper_max",
+      "gripper_mode",
+      "gripper_rate",
+      "gripper_threshold",
+      "ik_damping",
+      "max_ang_vel",
+      "max_joint_vel",
+      "max_lin_vel",
+      "max_target_lag",
+      "nominal_qpos",
+      "robot_model",
+      "sim_dt",
+      "tcp_local_z",
+      "tracking_extra",
+      "tracking_horizon",
+      "tracking_margin",
+      "tracking_timeout",
+      "tracking_weight",
+      "task"
+    ]
+  },
+  "scripted_source": {
+    "path": "/home/pi_lab/piper_ws/show100_scripted.py",
+    "sha256": "d7b53666437856f859d23c7ba58844f00689d2435be174e4cc490bcf172d4675",
+    "changes": "Import/path/configuration and IO relocation; standalone wrapper supplies live files, obsolete HTTP endpoint removed; staged numerical algorithms preserved"
+  },
+  "policy_weights_bundled": false
+}

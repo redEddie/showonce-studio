@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-01",
+  "model": "SHOW-108 MLP + last LSTM 16x",
+  "policy_id": "e62899a3bc91c4c241d6",
+  "source_release": "https://github.com/redEddie/piper-sim-lab/releases/tag/show108-mlp-lstm-16u-20261101",
+  "runtime_version": "0.5.0",
+  "runtime_commit": "611ebf00c716a6f81615bc9a60b48964c555abee",
+  "checkpoint_sha256": "6e52e2f5fd63c29ea5e3e6ae9676488acbe2ba5bf76823aeeb4a60cb9aa734de",
+  "inference": {
+    "status": "passed",
+    "actor": "mlp_lstm",
+    "steps": 256,
+    "batch": 4,
+    "max_action_abs_error": 1.1846423149108887e-06,
+    "state_and_logit_max_abs_error": {
+      "logits": 2.86102294921875e-06,
+      "memory_c": 7.62939453125e-06,
+      "memory_h": 1.430511474609375e-06
+    },
+    "policy_only_cpu_latency_ms": {
+      "p50": 0.08691800758242607,
+      "p95": 0.09052915265783668
+    },
+    "robot_connection": "none",
+    "scope": "synthetic export parity vectors; not a task success evaluation"
+  },
+  "controller": {
+    "status": "passed",
+    "reference": "SHOW-108 release original JAX checked_plan, FP32",
+    "cases": 32,
+    "matching_acceptance_decisions": 32,
+    "accepted": 31,
+    "max_reference_position_abs_error_rad": 7.013638165798142e-07,
+    "max_plan_state_abs_error": 7.648872468501988e-05,
+    "state_tolerance": 0.005,
+    "source_sha256": {
+      "smooth_plan.py": "652dc253b9f3c0733dd9cf6aab2ac7993fbfb684cd7ab0b7efe4b5bb8e9fad23",
+      "tracking_qp.py": "19560529019a3089f13c83ed5b1eb80ea5c9b33b59c7c353637f5051e9f92970",
+      "hierarchy_env.py": "907a32e650137ebf0bc3f9ad7a1ccf51a81c1cc3d65d217170589373e83da2b8",
+      "hierarchy.py": "9a9cb71f0b77a42ab2ca9f166047e691ed9e6c8241302d31e27d0fd4dd7ed97a",
+      "controllers.py": "9a686cbe43aaed843bf89cfd8d25304220491eb22871e52fc6c3d288556cfd36"
+    },
+    "hardware_commands_sent": false,
+    "scope": "reference planning equations only; no physics or real robot validation"
+  },
+  "observation": {
+    "status": "passed",
+    "cases": 64,
+    "observation_size": 49,
+    "max_abs_error": 4.76837158203125e-07,
+    "reference": "original _get_obs with CPU MuJoCo FK, zero observation delay/noise",
+    "source_sha256": "7552ca5bdc32e576bb77f9a349449e016500ce173d23c166ff174e41af77f7b0",
+    "hardware_commands_sent": false,
+    "scope": "input arithmetic and coordinate conventions; not camera calibration accuracy"
+  },
+  "browser": {
+    "desktop": true,
+    "mobile_no_horizontal_overflow": true,
+    "javascript_errors": [],
+    "selection_persistence": true,
+    "command_excludes_output_and_token": true
+  },
+  "offline_jobs": [
+    {
+      "mode": "validate",
+      "hardware_commands_sent": false,
+      "frames": null,
+      "asset_size_matches_training": null,
+      "policy_calls": null,
+      "control_ticks": null,
+      "maximum_reference_velocity_rad_s": null,
+      "maximum_reference_acceleration_rad_s2": null,
+      "maximum_reference_jerk_rad_s3": null
+    },
+    {
+      "mode": "mock",
+      "hardware_commands_sent": false,
+      "frames": null,
+      "asset_size_matches_training": null,
+      "policy_calls": 20,
+      "control_ticks": 395,
+      "maximum_reference_velocity_rad_s": 0.6696427807488284,
+      "maximum_reference_acceleration_rad_s2": 4.995004995005026,
+      "maximum_reference_jerk_rad_s3": 100.00000000000009
+    },
+    {
+      "mode": "replay",
+      "hardware_commands_sent": false,
+      "frames": 134,
+      "asset_size_matches_training": false,
+      "policy_calls": null,
+      "control_ticks": null,
+      "maximum_reference_velocity_rad_s": null,
+      "maximum_reference_acceleration_rad_s2": null,
+      "maximum_reference_jerk_rad_s3": null
+    }
+  ],
+  "real_robot_tested": false,
+  "live_perception_running": false,
+  "recorded_asset_size_note": "Reconstructed recording mesh differs from the 50mm training cube. Replay validates input format, not task success; GUI marks dimension review. Live perception uses known 50mm cube."
+}

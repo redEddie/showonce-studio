@@ -1,0 +1,14 @@
+--- a/Utils.py
++++ b/Utils.py
+@@ -605,9 +605,9 @@
+                         radius,0,0,
+                         -radius,0,0,
+                         0,radius,0,
+-                        0,-radius,0]).reshape(-1,3)
++                        0,-radius,0],dtype=poses.dtype,device=poses.device).reshape(-1,3)
+     pts = poses[:,:3,3].reshape(-1,1,3)+offsets.reshape(1,-1,3)
+-    K = torch.as_tensor(K)
++    K = torch.as_tensor(K,dtype=poses.dtype,device=poses.device)
+     projected = (K@pts.reshape(-1,3).T).T
+     uvs = projected[:,:2]/projected[:,2:3]
+     uvs = uvs.reshape(B, -1, 2)

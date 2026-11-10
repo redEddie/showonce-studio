@@ -1,0 +1,3 @@
+# Historical Thor additions, not a standalone portable environment lock. See docs/WORKERS.md.
+# Inherit the dedicated piper-show CUDA/SAM runtime, not Songjisu's environments.
+open3d==0.20.0

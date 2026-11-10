@@ -1,0 +1,354 @@
+{
+  "date": "2026-11-05",
+  "implementation": "studio_native_live_v1",
+  "pipeline_revision": "image_cube_bowl_v4",
+  "external_show33_source_required": false,
+  "legacy_inspector_required": false,
+  "algorithm_parity": {
+    "cube_image.py": {
+      "definitions_compared": 5,
+      "algorithm_AST_identical": true
+    },
+    "bowl_image.py": {
+      "definitions_compared": 9,
+      "algorithm_AST_identical": true
+    },
+    "RetainedSam": {
+      "algorithm_AST_identical": true
+    },
+    "ImageBowlTracker": {
+      "algorithm_AST_identical": true
+    },
+    "diagnostics": {
+      "algorithm_AST_identical": true
+    },
+    "object_status": {
+      "algorithm_AST_identical": true
+    },
+    "Sam_lifecycle": {
+      "algorithm_AST_identical": true
+    }
+  },
+  "recorded_input_parity": {
+    "scope": "Archived RGB-D and SAM masks; original source and packaged estimators under the same NumPy1/OpenCV4 environment. No camera or robot commands.",
+    "cases_compared": 42,
+    "accepted": {
+      "green_block": 19,
+      "bowl": 16
+    },
+    "matching_rejections": 7,
+    "max_pose_matrix_difference": 0.0,
+    "all_equal": true,
+    "cases": [
+      {
+        "capture": "show100-perception-20261027-212926-141903",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-perception-20261027-212926-141903",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-perception-20261027-215140-629380",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-perception-20261027-215140-629380",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-perception-20261027-215635-014524",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-perception-20261027-215635-014524",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-191526-121227",
+        "object": "green_block",
+        "result": "cube_known_shape_mismatch",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-191526-121227",
+        "object": "bowl",
+        "result": "table_plane_not_supported",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-193841-267665",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-193841-267665",
+        "object": "bowl",
+        "result": "table_plane_not_supported",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-195743-396708",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-195743-396708",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-200433-992009",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-200433-992009",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-201124-853531",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-201124-853531",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-211246-790410",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-211246-790410",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-211442-050518",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-211442-050518",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-214158-938574",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-214158-938574",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-220115-609238",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-220115-609238",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-220803-635056",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-20261028-220803-635056",
+        "object": "bowl",
+        "result": "bowl_inconsistent_with_upright_table_model",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-studio-20261101-152530-63be78",
+        "object": "green_block",
+        "result": "cube_current_RGB_not_supported",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show100-vision-studio-20261101-152530-63be78",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-clean-20261028",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-clean-20261028",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-20261028",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-20261028",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v2-20261028",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v2-20261028",
+        "object": "bowl",
+        "result": "table_plane_not_supported",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v3-20261028",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v3-20261028",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v4-20261028",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v4-20261028",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v5-20261028",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v5-20261028",
+        "object": "bowl",
+        "result": "table_plane_not_supported",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v6-20261028",
+        "object": "green_block",
+        "result": "accepted",
+        "legacy_native_equal": true
+      },
+      {
+        "capture": "show103-perception-prep-v6-20261028",
+        "object": "bowl",
+        "result": "accepted",
+        "legacy_native_equal": true
+      }
+    ]
+  },
+  "real_camera": {
+    "status": "passed",
+    "source": "actual D435i RGB-D camera",
+    "external_source_access_denied": true,
+    "legacy_modules_denied": true,
+    "production_service_ensure_used": true,
+    "worker_environment": {
+      "numpy": "1.26.4",
+      "sam3": "0.1.0"
+    },
+    "implementation": "studio_native_live_v1",
+    "pipeline_revision": "image_cube_bowl_v4",
+    "json_outputs": [
+      "diagnostics.json",
+      "manifest.json",
+      "object_poses.json",
+      "report.json",
+      "startup.json",
+      "tracked_poses.json"
+    ],
+    "sam_completed": 14,
+    "measured_ids": [],
+    "object_status": {
+      "green_block": "waiting_for_cube_mask",
+      "bowl": "mask_fragmented_or_small"
+    },
+    "latest_complete": false,
+    "pose_fields": [],
+    "camera_opened": true,
+    "robot_commands_sent": false,
+    "policy_executed": false,
+    "scope": "Live perception startup/transport/inference and file contract; no independent position-accuracy or robot-task evaluation.",
+    "verification_processes_stopped": true
+  },
+  "local_migration": {
+    "calibration_copy_sha256": "6da7bed7525ef976bc3ccb8fc36201b80426acfe777e240bb68ea70567e2cea5",
+    "calibration_content_changed": false,
+    "private_config_created": true,
+    "flat_launcher_default_uses_owned_calibration": true,
+    "legacy_source_paths_in_live_command": false,
+    "services_started": false,
+    "robot_commands_sent": false,
+    "gui_native_worker_selection_verified": true
+  },
+  "regression_tests": {
+    "studio_passed": 173,
+    "optional_geometry_skipped": 1,
+    "subtests_passed": 20
+  },
+  "scope": "Private migration of live image-based cube/bowl perception, no task-specific control, policy weights or calibration algorithm changes. Camera generation and posture-runner packaging remain separate.",
+  "repositories_remain_private": true,
+  "worker_environment_isolation": {
+    "venv_executable_symlink_preserved": true,
+    "app_pythonpath_not_forwarded": true,
+    "worker_has_own_installed_packages": true,
+    "production_service_ensure_used": true
+  }
+}

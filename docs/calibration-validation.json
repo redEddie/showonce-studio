@@ -1,0 +1,82 @@
+{
+  "hardware_commands_sent": false,
+  "assets_byte_identical": true,
+  "assets_count": 94,
+  "unchanged_ast_definitions": {
+    "register.py": 8,
+    "robot_model.py": 7,
+    "snapshot.py": 1,
+    "common.py": 7,
+    "segment.py": 0,
+    "capture.py": 2
+  },
+  "model_tensor_max_abs_difference": 0.0,
+  "eight_pose_link_transform_max_abs_difference": 0.0,
+  "recorded_full_pipeline": {
+    "success": true,
+    "offline_snapshot": true,
+    "legacy_filesystem_and_import_access_denied": true,
+    "denied_roots": [
+      "SHOW-33 checkout",
+      "previous Codex deployment checkout",
+      "pac2026 hardware audit model directory"
+    ],
+    "same_original_capture_and_feedback": true,
+    "candidate_checks": {
+      "trusted": true,
+      "serial_matches": true,
+      "table_height_difference_mm": 1.7,
+      "table_tilt_deg": 0.33,
+      "table_rms_mm": 1.98,
+      "table_points": 25093
+    },
+    "active_calibration_replaced": false,
+    "existing_candidate_comparison": {
+      "translation_difference_mm": 1.1581,
+      "rotation_difference_deg": 0.1244,
+      "note": "Same saved input; environment/repeated CUDA optimization may differ. This is not an independent extrinsic accuracy measurement."
+    },
+    "original_sam_robot_and_base_masks_byte_identical": true
+  },
+  "actual_camera_and_feedback_capture": {
+    "hardware_commands_sent": false,
+    "telemetry_fresh_at_frame": true,
+    "tx_packets_delta": 0,
+    "errors": [],
+    "five_aligned_depth_frames": true
+  },
+  "source_changes": "Package-relative imports, configured worker interpreters, local output roots and byte-preserved bundled model assets; numerical solver unchanged.",
+  "actual_live_full_pipeline": {
+    "entrypoint": "python calibrate_camera.py (existing flat workspace launcher)",
+    "success": true,
+    "camera_capture_and_passive_feedback": true,
+    "hardware_commands_sent": false,
+    "tx_packets_delta": 0,
+    "active_calibration_replaced": false,
+    "candidate_checks": {
+      "trusted": true,
+      "serial_matches": true,
+      "table_height_difference_mm": 1.7,
+      "table_tilt_deg": 0.66,
+      "table_rms_mm": 2.25,
+      "table_points": 22705
+    },
+    "mask_iou": 0.7879,
+    "robot_depth_residual_median_mm": 4.32
+  },
+  "verification_scope": "Existing Thor native environment and fresh split SAM environment; archived input and actual D435i read-only calibration. Does not establish fresh-machine installation or independent extrinsic accuracy.",
+  "test_suite": {
+    "passed": 188,
+    "skipped": 1,
+    "subtests_passed": 20,
+    "skip_scope": "Optional Open3D test in the CPU application verification environment"
+  },
+  "packaging": {
+    "wheel_assets_byte_identical": 94,
+    "model_licenses_included": true,
+    "console_entrypoint": "calibrate-camera",
+    "app_pip_check": "passed",
+    "sam_pip_check": "passed",
+    "services_left_running": false
+  }
+}

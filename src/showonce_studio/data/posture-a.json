@@ -1,0 +1,33 @@
+{
+  "base_height": 0.015,
+  "control_acceleration": 8.0,
+  "control_floor": 0.0,
+  "control_mode": "qp",
+  "ctrl_dt": 0.1,
+  "gripper_max": 0.05,
+  "gripper_mode": "ternary_latched",
+  "gripper_rate": 0.01,
+  "gripper_threshold": 0.5,
+  "ik_damping": 0.05,
+  "max_ang_vel": 1.0,
+  "max_joint_vel": 1.5,
+  "max_lin_vel": 0.1,
+  "max_target_lag": 0.15,
+  "nominal_qpos": [
+    0.0,
+    0.523,
+    -0.45,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "robot_model": "piper_v100",
+  "sim_dt": 0.005,
+  "tcp_local_z": 0.1385,
+  "tracking_extra": 0.02,
+  "tracking_horizon": 0.05,
+  "tracking_margin": 0.02,
+  "tracking_timeout": 0.5,
+  "tracking_weight": 100.0,
+  "task": "show76_ternary_qp"
+}

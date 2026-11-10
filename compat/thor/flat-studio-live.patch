@@ -1,0 +1,22 @@
+--- a/showonce_studio.py
++++ b/showonce_studio.py
+@@ -5,6 +5,10 @@
+ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+ import json
+ from pathlib import Path
++import os
++_studio_local_config = Path(__file__).resolve().parent/'configs/studio.local.toml'
++if _studio_local_config.is_file():
++    os.environ.setdefault('SHOWONCE_CONFIG', str(_studio_local_config))
+ import re
+ import signal
+ import subprocess
+@@ -34,7 +38,7 @@
+     ap.add_argument('--port', type=int, default=8765)
+     ap.add_argument('--node-port', type=int, default=8768)
+     ap.add_argument('--out', type=Path, default=ROOT/'datasets/demonstrations')
+-    ap.add_argument('--calib', type=Path, default=Path('/home/pi_lab/songjisu/show33/runs/snap-capture-20261028-195434/T_base_cam_robot.json'))
++    ap.add_argument('--calib', type=Path, default=ROOT/'calib/current.json')
+     args = ap.parse_args()
+     live_vision=LiveVisionService(args.calib,args.node_port)
+     child = None

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "showonce-studio"
+version = "0.3.0"
+description = "RGB-D demonstration collection, stages, object relations and policy deployment UI"
+requires-python = ">=3.11,<3.13"
+license-files = ["THIRD_PARTY.md", "src/showonce_studio/web/vendor/*LICENSE*", "src/showonce_studio/web/vendor/*NOTICE*", "src/showonce_studio/web/vendor/three/LICENSE", "src/showonce_studio/web/vendor/three/examples/jsm/misc/SculptGL.LICENSE.txt", "src/showonce_studio/_vendor/kaolin-check-tensor/LICENSE", "vendor/licenses/*", "src/showonce_studio/calibration/data/robot/*/LICENSE", "docs/source-inventory/third-party-notices/*", "docs/source-inventory/model-licenses/*"]
+dependencies = ["piper-runtime==0.5.0"]
+[project.optional-dependencies]
+analysis = ["numpy>=2,<3", "scipy>=1.13", "trimesh>=4,<6", "opencv-python-headless>=4.10", "mujoco==3.3.7"]
+geometry = ["open3d==0.20.0"]
+perception = ["sam3==0.1.0", "numpy==1.26.4", "scipy==1.15.3", "trimesh>=4,<6", "opencv-python-headless==4.11.0.86", "open3d==0.20.0", "einops==0.8.2", "psutil==7.2.2", "pycocotools==2.0.11", "Pillow==12.3.0", "setuptools>=77,<81"]
+vlm = ["transformers==5.21.1", "accelerate==1.15.0", "lm-format-enforcer==0.11.3"]
+motion = ["scipy>=1.13", "ruckig==0.19.4"]
+test = ["pytest>=8", "ruckig==0.19.4"]
+[project.scripts]
+showonce-studio = "showonce_studio.showonce_studio:main"
+showonce-capture = "showonce_studio.showonce_capture_node:main"
+calibrate-camera = "showonce_studio.calibration.cli:main"
+showonce-live-vision = "showonce_studio.showonce_live_vision:main"
+showonce-geometry = "showonce_studio.showonce_geometry_node:main"
+showonce-scene = "showonce_studio.showonce_scene_node:main"
+showonce-scripted = "showonce_studio.scripted_grasp:main"
+showonce-robot = "showonce_studio.showonce_robot:main"
+showonce-policy = "showonce_studio.showonce_policy_runtime:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.setuptools.package-data]
+showonce_studio = ["web/**/*", "web/*", "_vendor/kaolin-check-tensor/*", "data/*.json", "perception/data/*.json", "calibration/data/**/*", "calibration/data/*"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+[tool.uv.sources]
+piper-runtime = {path = "../piper-runtime"}
+sam3 = {git = "https://github.com/facebookresearch/sam3.git", rev = "7f473cfd983d5eb43040ff608f66bff0d7bdcb53"}
+
+# Analysis/control uses NumPy2; the upstream SAM worker uses a separate NumPy1
+# environment. uv must not try to install those two extras into one interpreter.
+[tool.uv]
+conflicts = [[{extra = "analysis"}, {extra = "perception"}]]

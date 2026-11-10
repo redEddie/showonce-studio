@@ -1,0 +1,5 @@
+{
+  "objects": [
+    {"id": "robot", "phrase": "robot arm", "color_rgb": [0, 200, 255]}
+  ]
+}
